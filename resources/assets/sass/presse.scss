@@ -1,0 +1,39 @@
+img.img-responsive.preview{
+    border:2px solid grey;
+    width: 70%;
+}
+
+h1.titre-white{
+    color: white;
+}
+h3.titre-article{
+    color:#d7a40a;
+}
+
+button.btn.btn-default.hello{
+    background-color: #d7a40a;
+    border-bottom: 5px solid #d7a40a;
+    border: none;
+    border-radius: 0px;
+    padding: 15px;
+}
+button.btn.btn-default.hello:hover{
+    transition: 0.7s;
+    background-color: transparent;
+    border-bottom: 5px solid #d7a40a;
+   
+}
+
+.more{
+    text-align: center;
+}
+
+a#voir-plus{
+    text-decoration: none;
+    color: white;
+}
+
+.description p{
+    color:#a0a0a0;
+   
+}

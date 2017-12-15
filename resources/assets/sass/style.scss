@@ -1,0 +1,308 @@
+$bg_color: #30343a;
+@font-face {
+font-family: 'code';
+src: url('../fonts/code/CODE Bold.otf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+.marginBottom{
+    margin-bottom: 80px;
+}
+h1{
+    text-align: center;
+    padding: 0px 0px 20px 0px;
+}
+.espace{
+    padding: 40px 0px;
+}
+#biographie .jaune{
+    color: #d7a40a;
+    font-weight: bold;
+}
+/* Head */
+.bg{
+    width: 100%;
+    //background-color: #585858;
+    background: url('../img/header_bg.png');
+    background-position-x: center;
+    background-size: cover;
+}
+#profil{
+    margin: 0 auto;
+    width: 70%;
+    padding-top: 70px;
+}
+#logo{
+    width: 70%;
+    padding-top: 168px;
+    float:right;
+}
+#titre-head{
+    text-align: center;
+    color:#d7a40a;
+    float:right;
+}
+span#profession:before{
+    content: 'Animateur TV';
+    animation: animate infinite 4s;
+}
+@keyframes animate{
+    0%{
+        content: 'Animateur TV';
+    }
+    33%{
+        content: 'Comédien';
+        
+    }
+    66%{
+        content: 'Humoriste';
+        
+    }
+    100%{
+        content: 'Animateur TV';
+        
+    }
+}
+/* navbar */
+
+#navbar{
+    height: 70px;
+    padding: 10px;
+    border-radius: 0px;
+}
+nav.navbar.navbar-default.navigation{
+    background-color: $bg_color;
+    border: none;
+    height: 3px;
+}
+.navbar-default .navbar-nav > li > a.liens {
+    color: white;
+}
+.navbar-default .navbar-nav > li > a.liens:hover{
+    padding-bottom: 19px;
+    border-bottom: 5px solid #d7a40a;
+    transition: 0.2s border;
+    color:#d7a40a;
+}
+#nav.navbar-fixed-top{
+    opacity: 0.95;
+}
+.navbar-default .navbar-nav > li > a.social-media-head{
+    color: white;
+    font-size: 20px;
+}
+.navbar-default .navbar-nav > li > a.social-media-head:hover{
+    color: #d7a40a;
+    transition: 0.2s;
+   
+    
+}
+/* bio */
+#img-bio{
+    border-radius: 50%;
+    width: 90%;
+}
+/* quote */
+blockquote.citation{
+    border-left: none;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 0px;
+}
+.cite{
+    margin-top: 10px;
+}
+/* events */
+.event {
+    font-size: 18px;
+    padding: 3% 15%;
+    border: 1px 0px solid black;
+    
+}
+.event:hover {
+    background-color: #d7a40a;
+    transition: 0.7s;
+    
+}
+.jour{
+    font-family: 'code';
+}
+.mois{
+    font-size: 12px;
+    font-family: 'code';
+}
+.infos{
+    font-size: 12px;
+}
+button.btn.btn-default.bouton-event-infos{
+    background-color: transparent;
+    border: 2px solid ;
+    border-radius: 0px;
+    padding: 10px 40px;
+    margin-bottom:10px;
+}
+button.btn.btn-default.bouton-event-infos:hover{
+    transition: 0.7s;
+    background-color: #d7a40a;
+   
+}
+.modal-body{
+    overflow: hidden;
+}
+/* galerie */
+#galerie{
+    background-color: $bg_color;
+}
+/* footer */
+footer{
+    margin-top: 50px;
+}
+.newsletter{
+    height: 250px;
+    padding: 65px 0px;
+}
+.newsletter h3{
+    color: white;
+}
+.newsletter_input{
+    width: 250px;
+    border: none;
+    padding: 5px 25px;
+    border-radius: 0px;
+    display: inline-block;
+}
+.newsletter_btn{
+    background-color: transparent;
+    width: 100px;
+    border: none;
+    height: 34px;
+    border-radius: 0px;
+    border: 2px solid white;
+    margin-top: -3px;
+    margin-left: -4px;
+    height: 36px;
+}
+.newsletter_btn:hover{
+    background-color: #d7a40a;
+    border-color: white;
+    transition: background 1s;
+}
+.sub_footer{
+    padding: 10px 0px;
+}
+.sub_footer .fa{
+    color: black;
+}
+.sub_footer .fa:hover{
+    color: #585858;
+    transition: color 0.6s;
+}
+.sub_footer span{
+    padding-right: 7px;
+}
+.newsletter-errors{
+    margin-top: 20px;
+}
+
+
+/* Media queries */
+
+/*head*/
+@media only screen and (min-width: 768px){
+nav.navbar.navbar-inverse{
+    display: none;
+}
+
+}
+
+@media only screen and (max-width: 767px) {
+
+nav#navbar{
+    display:none;
+}
+
+}
+
+@media only screen and (max-width: 1024px) {
+    img#profil{
+        display: none;
+    }
+
+    img#logo{
+        float: none;
+        margin: 0 auto;
+        padding-top:50px;
+    }
+
+    h3#titre-head{
+        float: none;
+    }
+
+/* events */
+    .col-md-2.jour{
+        float: left;
+    }
+    .col-md-4.lieux{
+        float: left;
+    }
+    button.btn.btn-default.bouton-event-infos{
+        float: right;
+    }
+
+    button.btn.btn-default.bouton-event-infos{
+        padding: 5px;
+    }
+/* galerie photo */
+
+    
+/* galerie */
+    img.img-responsive.preview{
+   object-fit: cover;
+   overflow: hidden;
+   height: 30vw; 
+   width : 30vw;
+    }
+
+}
+
+@media only screen and (max-width: 740px) {
+
+
+
+/* colones des galleries */
+    .col-xs-3{
+        width: 50%;
+        padding: 10px;
+    }
+/* bio */
+    #img-bio{
+    width: 50%;
+    margin: auto;
+    }
+/* newsletter */
+    .newsletter h3{
+        margin-top:-10px;
+    }
+    
+/* footer */
+    .col-md-6.copyright{
+        text-align: center;
+    }
+    .col-md-6.sociaux.text-right{
+        text-align: center;
+    }
+
+}
+
+
+@media only screen and (max-width: 380px) {
+input#btn-newsletter{
+        margin-top: 15px;
+    }
+}
+
+
+
+
