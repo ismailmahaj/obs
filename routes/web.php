@@ -81,10 +81,11 @@ Route::get('/galerie-videos', ['as' => 'galerie-videos', function () {
 Route::post('changelocale', ['as' => 'changelocale', 'uses' => 'TranslationController@changeLocale']);
 
 // Route::group(['prefix' => 'admin'], function () {
-//     Voyager::routes();
-// });
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+    //     Voyager::routes();
+    // });
+    
+    
+    Auth::routes();
+    
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('posts', 'PostController');
