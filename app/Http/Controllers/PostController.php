@@ -9,8 +9,7 @@ class PostController extends Controller
     public function index(Request $request)
     {
         {
-            // $posts = Posts::where('deleted_at', NULL)->get();
-            // return view('pages.events', ['posts' => $posts]);
+
             $posts= Post::latest()->paginate(10);
             return view('posts.index',compact('posts'))
                 ->with('i', ($request->input('page', 1) - 1) * 10);

@@ -332,8 +332,8 @@
                   </a>
                   <ul class="treeview-menu">
                     <li class="active">
-                      <a href="index.html">
-                        <i class="fa fa-circle-o"></i> Dashboard v1</a>
+                      <a href="{{('admin/export')}}">
+                        <i class="fa fa-circle-o"></i> Newletter telecharger fichier excelle</a>
                     </li>
                     <li>
                       <a href="index2.html">

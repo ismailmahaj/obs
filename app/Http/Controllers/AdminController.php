@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Customer;
+use App\Newsletter;
 use App\Logger;
 use App\Mail\Bienvenue;
 use Excel;
@@ -11,17 +11,17 @@ use Excel;
 class AdminController extends Controller
 {
 	public function getDashboard(){
-		$customers_count = Customer::count();
-		$customers = Customer::orderBy('created_at', 'desc')->take(20)->get();
-		return view('admin.dashboard', compact('customers', 'customers_count'));
+		$newsletters_count = Newsletter::count();
+		$newsletters = Newsletter::orderBy('created_at', 'desc')->take(20)->get();
+		return view('admin.dashboard', compact('newsletters', 'newsletters_count'));
 	}
 
 	public function getMembers(){
-		$customers = Customer::orderBy('created_at', 'desc')->paginate(15);
-		return view('admin.members.list', compact('customers'));
+		$newsletters = Newsletter::orderBy('created_at', 'desc')->paginate(15);
+		return view('admin.members.list', compact('newsletters'));
 	}	
 
-	public function showMember(Customer $membre){
+	public function showMember(Newsletter $membre){
 		return view('admin.members.show', compact('membre'));
 	}
 
@@ -40,56 +40,56 @@ class AdminController extends Controller
         return view('admin.members.create');
     }
 
-    public function storeMember(Request $request)
-    {
-        if(strip_tags($request->input('categorie')) == "Pratiquant"){
-            $identifiant = "p-";
-        }else{
-            $identifiant = "z-";
-        }
+    // public function storeMember(Request $request)
+    // {
+    //     if(strip_tags($request->input('categorie')) == "Pratiquant"){
+    //         $identifiant = "p-";
+    //     }else{
+    //         $identifiant = "z-";
+    //     }
 
-        $membre = new Customer();
-            $membre->identifiant = "tmp";
-            $membre->nom_binome = strip_tags($request->input('nom_binome'));
-            $membre->categorie = strip_tags($request->input('categorie'));
+    //     $membre = new Newsletter();
+    //         $membre->identifiant = "tmp";
+    //         $membre->nom_binome = strip_tags($request->input('nom_binome'));
+    //         $membre->categorie = strip_tags($request->input('categorie'));
 
-            $membre->prenom_binome_a = strip_tags($request->input('prenom_binome_a'));
-            $membre->nom_binome_a = strip_tags($request->input('nom_binome_a'));
-            $membre->sexe_a = strip_tags($request->input('sexe_a'));
-            $membre->email_binome_a = strip_tags($request->input('email_binome_a'));
+    //         $membre->prenom_binome_a = strip_tags($request->input('prenom_binome_a'));
+    //         $membre->nom_binome_a = strip_tags($request->input('nom_binome_a'));
+    //         $membre->sexe_a = strip_tags($request->input('sexe_a'));
+    //         $membre->email_binome_a = strip_tags($request->input('email_binome_a'));
 
-            $membre->prenom_binome_b = strip_tags($request->input('prenom_binome_b'));
-            $membre->nom_binome_b = strip_tags($request->input('nom_binome_b'));
-            $membre->sexe_b = strip_tags($request->input('sexe_b'));
-            $membre->email_binome_b = strip_tags($request->input('email_binome_b'));
-            $membre->nom_coach_instructeur = strip_tags($request->input('nom_coach_instructeur'));
-            $membre->club = strip_tags($request->input('club'));
+    //         $membre->prenom_binome_b = strip_tags($request->input('prenom_binome_b'));
+    //         $membre->nom_binome_b = strip_tags($request->input('nom_binome_b'));
+    //         $membre->sexe_b = strip_tags($request->input('sexe_b'));
+    //         $membre->email_binome_b = strip_tags($request->input('email_binome_b'));
+    //         $membre->nom_coach_instructeur = strip_tags($request->input('nom_coach_instructeur'));
+    //         $membre->club = strip_tags($request->input('club'));
 
-            $membre->save();
+    //         $membre->save();
 
-            $membre->identifiant = $identifiant . $membre->id;
-            $membre->save();
+    //         $membre->identifiant = $identifiant . $membre->id;
+    //         $membre->save();
 
-        \Mail::to($membre->email_binome_a)->send(new Bienvenue());
-        \Mail::to($membre->email_binome_b)->send(new Bienvenue());
+    //     \Mail::to($membre->email_binome_a)->send(new Bienvenue());
+    //     \Mail::to($membre->email_binome_b)->send(new Bienvenue());
 
-        return redirect('/admin/membres');
-    }
+    //     return redirect('/admin/membres');
+    // }
 
     public function export(){
 
-        $customers = Customer::all();
+        $newsletters = Newsletter::all();
         //$users = User::select('identifiant as Identifiant','created_at')->get();
 
-        Excel::create('customers', function($excel) use($customers) {
-            $excel->sheet('Sheet 1', function($sheet) use($customers) {
-                $sheet->fromArray($customers);
+        Excel::create('newsletters', function($excel) use($newsletters) {
+            $excel->sheet('Sheet 1', function($sheet) use($newsletters) {
+                $sheet->fromArray($newsletters);
             });
         })->export('xls');
 
         return redirect('/admin/members');
     }
-    public function editMember(Customer $membre)
+    public function editMember(Newsletter $membre)
     {
         return view('admin.members.edit', compact('membre'));
     }
@@ -102,26 +102,26 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    public function updateMember(Request $request, Customer $membre)
-    {
-        $membre->nom_binome = strip_tags($request->input('nom_binome'));
-        $membre->categorie = strip_tags($request->input('categorie'));
+    // public function updateMember(Request $request, Newsletter $membre)
+    // {
+    //     $membre->nom_binome = strip_tags($request->input('nom_binome'));
+    //     $membre->categorie = strip_tags($request->input('categorie'));
 
-        $membre->prenom_binome_a = strip_tags($request->input('prenom_binome_a'));
-        $membre->nom_binome_a = strip_tags($request->input('nom_binome_a'));
-        $membre->sexe_a = strip_tags($request->input('sexe_a'));
-        $membre->email_binome_a = strip_tags($request->input('email_binome_a'));
+    //     $membre->prenom_binome_a = strip_tags($request->input('prenom_binome_a'));
+    //     $membre->nom_binome_a = strip_tags($request->input('nom_binome_a'));
+    //     $membre->sexe_a = strip_tags($request->input('sexe_a'));
+    //     $membre->email_binome_a = strip_tags($request->input('email_binome_a'));
 
-        $membre->prenom_binome_b = strip_tags($request->input('prenom_binome_b'));
-        $membre->nom_binome_b = strip_tags($request->input('nom_binome_b'));
-        $membre->sexe_b = strip_tags($request->input('sexe_b'));
-        $membre->email_binome_b = strip_tags($request->input('email_binome_b'));
-        $membre->nom_coach_instructeur = strip_tags($request->input('nom_coach_instructeur'));
-        $membre->club = strip_tags($request->input('club'));
+    //     $membre->prenom_binome_b = strip_tags($request->input('prenom_binome_b'));
+    //     $membre->nom_binome_b = strip_tags($request->input('nom_binome_b'));
+    //     $membre->sexe_b = strip_tags($request->input('sexe_b'));
+    //     $membre->email_binome_b = strip_tags($request->input('email_binome_b'));
+    //     $membre->nom_coach_instructeur = strip_tags($request->input('nom_coach_instructeur'));
+    //     $membre->club = strip_tags($request->input('club'));
 
-        $membre->save();
-        return redirect('/admin/membres');
-    }
+    //     $membre->save();
+    //     return redirect('/admin/membres');
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -132,15 +132,15 @@ class AdminController extends Controller
 
     
 
-    public function destroy(Customer $membre)
+    public function destroy(Newsletter $membre)
     {
         $membre->delete();
         return redirect('/admin/membres');
     }
 
     public function search(Request $request){
-        $customers = Customer::where('nom_binome', 'LIKE', '%'. strip_tags($request->input('name')). '%')->get();
-        return view('admin.members.search', compact('customers'));
+        $newsletters = Newsletter::where('nom_binome', 'LIKE', '%'. strip_tags($request->input('name')). '%')->get();
+        return view('admin.members.search', compact('newsletters'));
     }
 
 
