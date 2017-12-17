@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
             <strong>date:</strong>
-            {!! Form::text('date', null, array('placeholder' => 'date','class' => 'form-control')) !!}
+            {!! Form::date('date', null, array('placeholder' => 'date','class' => 'form-control' ,'' => 'id')) !!}
         </div>
         <div class="form-group">
             <strong>lieu:</strong>
@@ -25,6 +25,7 @@
         <div class="form-group">
             <strong>adresse:</strong>
             {!! Form::text('adresse', null, array('placeholder' => 'adresse','class' => 'form-control')) !!}
+   
         </div>
         <div class="form-group">
             <strong>description:</strong>
@@ -36,7 +37,7 @@
         </div>
         <div class="form-group">
             <strong>lien_image:</strong>
-            {!! Form::text('lien_image', null, array('placeholder' => 'lien_image','class' => 'form-control')) !!}
+            {!! Form::file('lien_image', null, array('placeholder' => 'lien_image','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
