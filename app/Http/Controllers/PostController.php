@@ -13,6 +13,7 @@ class PostController extends Controller
             $posts= Post::latest()->paginate(10);
             return view('posts.index',compact('posts'))
                 ->with('i', ($request->input('page', 1) - 1) * 10);
+                // dd($request);
         }
 
     }
