@@ -5,12 +5,12 @@
         </div>
         <div data-aos="fade-left">
             <div class="row">
-                @foreach($videos as $video)
-                    @if($video->ordre <= 8 && $video->ordre != 0)
+                @foreach($events as $event)
+                    @if($event->ordre <= 8 && $event->ordre != 0)
                     <div class="col-md-3">
                         <div class="thumb">
-                        <a data-fancybox href="{{$video->lien}}">
-                        <img src="{{ url('/storage/' . $video->miniature) }}">
+                        <a data-fancybox href="{{$event->lien}}">
+                        <img src="{{ url('/storage/' . $event->miniature) }}">
                         </a>
                         </div>
                     </div>

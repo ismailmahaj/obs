@@ -1,7 +1,6 @@
 @extends('template.base')
 
 @section('content')
-    @include('partials.navbar')
     @include('pages.events')
     @include('pages.galerie')
     @include('pages.galerie-videos')

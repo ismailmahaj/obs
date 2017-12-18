@@ -1,7 +1,6 @@
 @extends('template.base')
 
 @section('content')
-@include('partials.navbar_multi')
 <h1>Merci pour votre inscription</h1>
 @endsection
 

@@ -34,7 +34,7 @@
 
             <strong>Title:</strong>
 
-            {{ $post->title}}
+            {{ $post->titre}}
 
         </div>
 
@@ -46,7 +46,70 @@
 
             <strong>Content:</strong>
 
-            {{ $post->content}}
+            {{ $post->description}}
+
+        </div>
+
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+
+        <div class="form-group">
+
+            <strong>date:</strong>
+
+            {{ $post->date}}
+
+        </div>
+
+    </div>
+
+</div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+
+        <div class="form-group">
+
+            <strong>lieu:</strong>
+
+            {{ $post->lieu}}
+
+        </div>
+
+    </div>
+
+</div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+
+        <div class="form-group">
+
+            <strong>adreesse:</strong>
+
+            {{ $post->adresse}}
+
+        </div>
+
+    </div>
+
+</div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+
+        <div class="form-group">
+
+            <strong>billeterie:</strong>
+
+            {{ $post->lien_billetterie}}
+
+        </div>
+
+    </div>
+
+</div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+
+        <div class="form-group">
+
+            <strong>image:</strong>
+
+            {{ $post->lien_image}}
 
         </div>
 
