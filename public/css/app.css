@@ -9,6 +9,15 @@
  * http://api.jqueryui.com/category/theming/
  */
 
+
+@media screen and (min-width: 300px) and (max-width: 1024px){
+  .row{
+    margin-left: 0px!important;
+    margin-right: 0px!important;
+  }
+}
+
+
 /* Layout helpers
 ----------------------------------*/
 .ui-helper-hidden {
