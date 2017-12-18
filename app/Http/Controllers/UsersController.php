@@ -19,6 +19,7 @@ class UsersController extends Controller
         $events = Evenement::where('deleted_at', NULL)->get();
         $videos = Video::where('deleted_at', NULL)->orderBy('created_at', 'desc')->get();
         $photos = Media::where('deleted_at', NULL)->orderBy('created_at', 'desc')->get();
+        
         return view('pages.index', ['events' => $events, 'videos' => $videos, 'photos' => $photos]);
     }
 
