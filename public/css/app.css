@@ -17,7 +17,11 @@
   margin-right: 0px!important;
   margin-left: 0px!important;
 }
+#navbar{
 
+  z-index: 999;
+  color: white;
+}
 
 }
 
