@@ -11,42 +11,42 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Titre:</strong>
+            <strong>Titre</strong>
             {!! Form::text('titre', null, array('placeholder' => 'Titre','class' => 'form-control')) !!}
         </div>
         <div class="form-group">
-            <strong>date:</strong>
-            {!! Form::date('date', null, array('placeholder' => 'date','class' => 'form-control' ,'' => 'id')) !!}
+            <strong>Date</strong>
+            {!! Form::date('date', null, array('placeholder' => 'Date','class' => 'form-control' ,'' => 'id')) !!}
         </div>
         <div class="form-group">
-            <strong>lieu:</strong>
-            {!! Form::text('lieu', null, array('placeholder' => 'lieu','class' => 'form-control')) !!}
+            <strong>Lieu</strong>
+            {!! Form::text('lieu', null, array('placeholder' => 'Lieu','class' => 'form-control')) !!}
         </div>
         <div class="form-group">
-            <strong>adresse:</strong>
-            {!! Form::text('adresse', null, array('placeholder' => 'adresse','class' => 'form-control')) !!}
+            <strong>Adresse</strong>
+            {!! Form::text('adresse', null, array('placeholder' => 'Adresse','class' => 'form-control')) !!}
    
         </div>
         <div class="form-group">
-            <strong>description:</strong>
-            {!! Form::text('description', null, array('placeholder' => 'description','class' => 'form-control')) !!}
+            <strong>Description</strong>
+            {!! Form::text('description', null, array('placeholder' => 'Description','class' => 'form-control')) !!}
         </div>
         <div class="form-group">
-            <strong>lien_billetterie:</strong>
-            {!! Form::text('lien_billetterie', null, array('placeholder' => 'lien_billetterie','class' => 'form-control')) !!}
+            <strong>Lien Billetterie</strong>
+            {!! Form::text('lien_billetterie', null, array('placeholder' => 'Lien Billetterie','class' => 'form-control')) !!}
         </div>
         <div class="form-group">
-            <strong>lien_image:</strong>
-            {!! Form::file('lien_image', null, array('placeholder' => 'lien_image','class' => 'form-control')) !!}
+            <strong>Lien Image</strong>
+            {!! Form::file('lien_image', null, array('placeholder' => 'Lien Image','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Content:</strong>
-            {!! Form::textarea('content', null, array('placeholder' => 'Content','class' => 'form-control','style'=>'height:100px')) !!}
+            <strong>Contenu</strong>
+            {!! Form::textarea('content', null, array('placeholder' => 'Contenu','class' => 'form-control','style'=>'height:100px')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
     </div>
 </div>
