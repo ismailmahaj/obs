@@ -11,6 +11,9 @@
         window.location.href = "{{route('pages.index')}}";
         }, 3000); 
     }
+$table->timestamp('confirmed_at')->nullable();
+$table->string('confirmation_token')->nullable();
+
     redirect_homepage()
 </script>
 @endpush

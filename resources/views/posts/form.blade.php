@@ -8,7 +8,7 @@
         </ul>
     </div>
 @endif
-<div class="row">
+<div id="ajoutarticle" class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Titre</strong>

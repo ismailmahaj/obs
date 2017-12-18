@@ -20,3 +20,16 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 const app = new Vue({
     el: '#app'
 });
+
+
+
+
+$ajoutarticle = document.querySelector('#ajoutarticle');
+$ajoutarticle.hide();
+
+$btnajout = document.querySelector('#btnajout');
+
+
+$btnajout.addEventListener('click', function(){
+$ajoutarticle.show();
+})
