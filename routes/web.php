@@ -90,3 +90,19 @@ Route::post('changelocale', ['as' => 'changelocale', 'uses' => 'TranslationContr
     
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('posts', 'PostController');
+});
+
+
+
+Route::post('upload', 'UploadController@upload');
+
+
+/* Confirmation e-mail (Ismail à verifier)   */
+// Route::get('/confirm/{token}', function ($token) {
+//   $user = User::whereConfirmationToken($token)->firstOrFail();
+//   $user->confirmed_at = now();
+//   /* Nous devrions également définir le paramètre confirmation_token sur null */
+//   $user->confirmation_token = null;
+//   $user->save();
+//   return view('confirmed');
+// });
