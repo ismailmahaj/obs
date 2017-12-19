@@ -93,6 +93,11 @@ Route::post('changelocale', ['as' => 'changelocale', 'uses' => 'TranslationContr
 });
 
 
+
+Route::post('upload', 'UploadController@upload');
+
+
+/* Confirmation e-mail (Ismail à verifier)   */
 Route::get('/confirm/{token}', function ($token) {
   $user = User::whereConfirmationToken($token)->firstOrFail();
   $user->confirmed_at = now();
