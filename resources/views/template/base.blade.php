@@ -12,6 +12,7 @@
         <link href="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.css">
         <link rel="stylesheet" href="{{url('css/app.css')}}">
         <link rel="stylesheet" href="{{url('admin/bower_components/css/style.css')}}">
+        
     </head>
     <body>
             @include('pages.header')
