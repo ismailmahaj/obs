@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use \Input as Input;
 use App\Post;
 
 class PostController extends Controller
@@ -27,9 +28,18 @@ class PostController extends Controller
             'titre' => 'required',
             'lieu' => 'required',
         ]);
+if(Input::hasFile('lien_image')){
+echo 'Uploaded <br/>';
+$file = Input::file('lien_image');
+$file->move('uploads', $file->getClientOriginalName());}
+// 
+// echo '<img src="uploads/' . $file->getClientOriginalName() . '" />';
         Post::create($request->all());
         return redirect()->route('posts.index')
                         ->with('success','Post created successfully');
+
+
+
     }
     public function show($id)
     {

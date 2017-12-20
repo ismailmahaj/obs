@@ -37,7 +37,9 @@
         </div>
         <div class="form-group">
             <strong>Lien Image</strong>
-            {!! Form::file('lien_image', null, array('placeholder' => 'Lien Image','class' => 'form-control')) !!}
+             {!! Form::file('lien_image', null, array('class' => 'form-control', 'enctype' => 'multipart/form-data')) !!}
+            <!--<input type="file" name="lien_image" id="file">-->
+    <input type="hidden" value="{{ csrf_token() }}" name="_token">
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -47,6 +49,6 @@
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        <button type="submit" class="btn btn-primary">Envoyer</button>
+        <button type="submit" value="Upload" name="submit" class="btn btn-primary">Envoyer</button>
     </div>
 </div>

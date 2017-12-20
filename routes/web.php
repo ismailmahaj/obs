@@ -93,8 +93,8 @@ Route::post('changelocale', ['as' => 'changelocale', 'uses' => 'TranslationContr
 });
 
 
-
-Route::post('upload', 'UploadController@upload');
+/*  UPLOAD PHOTO ROUTE   */
+// Route::post('upload', 'UploadController@upload');
 
 
 /* Confirmation e-mail (Ismail à verifier)   */
