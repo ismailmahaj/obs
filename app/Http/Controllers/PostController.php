@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
+use \Input as Input;
+
 
 class PostController extends Controller
 {
@@ -30,6 +32,11 @@ class PostController extends Controller
         Post::create($request->all());
         return redirect()->route('posts.index')
                         ->with('success','Post created successfully');
+                        if(Input::hasFile('lien_image')){
+                            echo 'Uploaded <br/>';
+                            $file = Input::file('lien_image');
+                            $file->move('uploads', $file->getClientOriginalName());
+                        }
     }
     public function show($id)
     {
@@ -56,5 +63,15 @@ class PostController extends Controller
         Post::find($id)->delete();
         return redirect()->route('posts.index')
                         ->with('success','Post deleted successfully');
+    }
+    public function upload(){
+        
+        
+        if(Input::hasFile('file')){
+        echo 'Uploaded <br/>';
+        $file = Input::file('file');
+        $file->move('uploads', $file->getClientOriginalName());
+        // echo '<img src="uploads/' . $file->getClientOriginalName() . '" />';
+        }
     }
 }
