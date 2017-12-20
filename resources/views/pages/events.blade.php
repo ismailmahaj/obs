@@ -19,7 +19,7 @@
                                 <div class="modal-body">
                                     
                                     <div class="col-md-7 affiche">
-                                        <img class="img-responsive" src="{{ url('/storage/' . $event->lien_image) }}">
+                                        <img class="img-responsive" src="{{ url('uploads/' . $event->lien_image) }}">
                                     </div>
                                     
                                     <?php setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1'); ?>

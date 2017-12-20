@@ -92,7 +92,11 @@ Route::post('changelocale', ['as' => 'changelocale', 'uses' => 'TranslationContr
     Route::resource('posts', 'PostController');
 
 
+<<<<<<< HEAD
 
+=======
+/*  UPLOAD PHOTO ROUTE   */
+>>>>>>> b6f57dbfd53134154a29af60709d92095ff40c82
 // Route::post('upload', 'UploadController@upload');
 
 

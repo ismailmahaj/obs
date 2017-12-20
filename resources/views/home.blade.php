@@ -169,12 +169,15 @@
           <h4 class="modal-title">Ajouts événèments</h4>
         </div>
         <div class="modal-body">        
-{!! Form::open(array('route' => 'posts.store','method'=>'POST')) !!}
+{!! Form::open(array('route' => 'posts.store','method'=>'POST', 'enctype '=>'multipart/form-data')) !!}
 
      @include('posts.form')
 
 {!! Form::close() !!}
-
+ <!--<form action="{{ URL::to('upload') }}" method="post" enctype="multipart/form-data">-->
+   
+    
+    <!--</form>-->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
@@ -197,12 +200,16 @@
 <!--{!! Form::open(array('route' => 'posts.store','method'=>'POST')) !!}-->
 
     <h1>Upload Photo</h1>
+<<<<<<< HEAD
     <form action="{{ URL::to('upload') }}" method="post" enctype="multipart/form-data">
     <label>Sélectionner l'image à uploader</label>
     <input type="file" name="lien_image" id="file">
     <input type="submit" value="test" name="submit">
     <input type="hidden" value="{{ csrf_token() }}" name="_token">
     </form>
+=======
+   
+>>>>>>> b6f57dbfd53134154a29af60709d92095ff40c82
 
 
 {!! Form::close() !!}
