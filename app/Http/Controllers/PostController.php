@@ -29,12 +29,12 @@ class PostController extends Controller
             'lieu' => 'required',
         ]);
 if(Input::hasFile('lien_image')){
-echo 'Uploaded <br/>';
+
 $file = Input::file('lien_image');
 $file->move('uploads', $file->getClientOriginalName());}
 // 
 // echo '<img src="uploads/' . $file->getClientOriginalName() . '" />';
-        Post::create($request->all());
+        Post::create($request->all()->getPathName());
         return redirect()->route('posts.index')
                         ->with('success','Post created successfully');
 
