@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \Input as Input;
+use Intervention\Image\ImageManagerStatic as Image;
+
 use App\Post;
-use \Input as Input;
 
 
 class PostController extends Controller
@@ -31,25 +32,21 @@ class PostController extends Controller
             'lieu' => 'required',
         ]);
 if(Input::hasFile('lien_image')){
-echo 'Uploaded <br/>';
+// dd( Input::file('lien_image')->getClientOriginalName());
+$filename = Input::file('lien_image')->getClientOriginalName();
 $file = Input::file('lien_image');
-$file->move('uploads', $file->getClientOriginalName());}
-// 
+// $file->move(public_path('uploads'), $file->getClientOriginalName());}
+$file->move($filename);}
+
 // echo '<img src="uploads/' . $file->getClientOriginalName() . '" />';
+
         Post::create($request->all());
+        // dd($_FILES);:
         return redirect()->route('posts.index')
                         ->with('success','Post created successfully');
-<<<<<<< HEAD
-                        if(Input::hasFile('lien_image')){
-                            echo 'Uploaded <br/>';
-                            $file = Input::file('lien_image');
-                            $file->move('uploads', $file->getClientOriginalName());
-                        }
-=======
 
 
 
->>>>>>> b6f57dbfd53134154a29af60709d92095ff40c82
     }
     public function show($id)
     {

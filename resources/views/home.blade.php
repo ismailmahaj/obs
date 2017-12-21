@@ -200,16 +200,7 @@
 <!--{!! Form::open(array('route' => 'posts.store','method'=>'POST')) !!}-->
 
     <h1>Upload Photo</h1>
-<<<<<<< HEAD
-    <form action="{{ URL::to('upload') }}" method="post" enctype="multipart/form-data">
-    <label>Sélectionner l'image à uploader</label>
-    <input type="file" name="lien_image" id="file">
-    <input type="submit" value="test" name="submit">
-    <input type="hidden" value="{{ csrf_token() }}" name="_token">
-    </form>
-=======
    
->>>>>>> b6f57dbfd53134154a29af60709d92095ff40c82
 
 
 {!! Form::close() !!}
