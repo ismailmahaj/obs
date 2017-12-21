@@ -11,6 +11,11 @@
 |
 */
 
+
+Route::get('send', 'MailController@send');
+
+
+
 Route::get('/', [
     "uses" => "UsersController@index",
     "as" => "pages.index"
@@ -84,6 +89,10 @@ Route::post('changelocale', ['as' => 'changelocale', 'uses' => 'TranslationContr
 //     Voyager::routes();
 // });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

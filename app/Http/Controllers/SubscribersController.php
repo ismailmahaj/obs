@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Mail;
 use App\Subscribers;
 class SubscribersController extends Controller
 {
@@ -13,6 +14,12 @@ class SubscribersController extends Controller
         $post = new Subscribers();
         $post->email = $request->email;
         $post->save();
+        Mail::send(['text'=>'mail'],['name', 'Oussama'], function($message){
+            $message->to('elouazzanitawfiq@gmail.com', 'To Towfiq')->subject("Oussama Benali - Merci de l'inscription");
+            $message->from('info@oussamabenali.be', 'Oussama Benali');
+
+
+        });
         return view('pages/subscribe-confirmation');
     }
     // création et récupération fichier CSV

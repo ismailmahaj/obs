@@ -2,7 +2,9 @@
 
 @section('content')
 @include('partials.navbar_multi')
-<h1>Merci pour votre inscription</h1>
+<div class=" alert-success text-center">
+<h1><strong>Succès</strong> Votre inscription à notre Newsletter a bien été envoyé.</h1>
+</div>
 @endsection
 
 @push('script')
