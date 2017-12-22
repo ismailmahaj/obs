@@ -10,7 +10,23 @@
  */
 
 
+#contact input.form-control{
+  margin-bottom: 10px;
+}
+#contact .contact_btn{
 
+margin-top: 10px;
+}
+
+#presse .img-responsive{
+margin-bottom: 10px;
+display: inline;
+}
+
+.partenaire{
+  width: 200px;
+  
+}
 
 .mobile-menu{
 
@@ -20,7 +36,12 @@
 	display: none;
 
 }
+@media (max-width: 379px){
+#btn-newsletter{
+  margin-top: 10px;
+}
 
+}
 @media (max-width: 640px) {
 
 	.mobile-menu{

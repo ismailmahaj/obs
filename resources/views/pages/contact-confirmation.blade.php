@@ -2,7 +2,7 @@
 
 @section('content')
 @include('partials.navbar_multi')
-<h3 class="text-center">Votre message a bien été envoyé.</h3>
+<h3 class="text-center">Votre message a bien été envoyé. Je vous en remercie !</h3>
 @endsection
 
 @push('script')

@@ -22,7 +22,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                                <input type="submit" class="btn btn-large btn-block btn-danger contact_btn" value="Envoyer">
+                                <input type="submit" class="btn btn-block btn-danger contact_btn" value="Envoyer">
                         </div>
                     </div>
                 </div>
@@ -81,8 +81,8 @@
     
         <div class="sub_footer">
         <div class="container">
-            <div class="col-md-6">
-                <span>Oussama Benali © 2017 - Tous droits réservés</span>
+            <div class="col-md-12 text-center">
+                <span>Oussama Benali © 2017 - Tous droits réservés. Made MolenGeek by Amaya | MolenIT</span>
             </div>
         </div>
     </div>

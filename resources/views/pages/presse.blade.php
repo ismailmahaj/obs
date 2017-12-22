@@ -17,11 +17,11 @@
                         <a data-fancybox="gallery" href="/images-oussama/articles/Article-5.jpg"><img class="img-responsive preview center-block" src="{{url('/images-oussama/articles/Article-5.jpg')}}" alt="" ></a>
                     </div></div>
             </div>
-            <div class="row">
-                <div class="col-md-3"><img class="img-responsive" src="{{url('/img/iconepresse/lacapitale.png')}}"></div>
-                <div class="col-md-3"><img class="img-responsive" src="{{url('/img/iconepresse/lacapitale.png')}}"></div>
-                <div class="col-md-3"><img class="img-responsive" src="{{url('/img/iconepresse/leconomiste.png')}}"></div>
-                <div class="col-md-3"><img class="img-responsive" src="{{url('/img/iconepresse/dimabladna.png')}}"></div>
+            <div class="row text-center">
+                <div class="col-md-3"><img class="img-responsive partenaire" src="{{url('/img/iconepresse/lacapitale.png')}}"></div>
+                <div class="col-md-3"><img class="img-responsive partenaire" src="{{url('/img/iconepresse/lacapitale.png')}}"></div>
+                <div class="col-md-3"><img class="img-responsive partenaire" src="{{url('/img/iconepresse/leconomiste.png')}}"></div>
+                <div class="col-md-3"><img class="img-responsive partenaire" src="{{url('/img/iconepresse/dimabladna.png')}}"></div>
             </div>
         </div>
         
