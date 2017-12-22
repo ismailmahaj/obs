@@ -4,6 +4,9 @@
     <?php $navEventLink = "events-link" ?>
     @endif
     
+    <div class="mobile-menu" id="mobile-menu"> 
+		<h3 class="text-center">Menu</h3> <img src="http://www.shoredreams.net/wp-content/uploads/2014/02/show-menu-icon.png">
+	</div>
     <nav id="navbar" class="navbar navbar-default navigation" role="navigation">
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <div class="container">
@@ -18,11 +21,11 @@
                 </ul>
                 
                 
-                <ul class="nav navbar-nav nav-right pull-right">
+                <!--<ul class="nav navbar-nav nav-right pull-right">
                     <li><a href="https://www.facebook.com/" target="_blank" class="social-media-head"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
                     <li><a href="https://twitter.com/" target="_blank" class="social-media-head"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
                     <li><a href="https://instagram.com/" target="_blank" class="social-media-head"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                </ul>
+                </ul>-->
 
                     {!! Form::open(['method' => 'POST', 'route' => 'changelocale', 'class' => 'form-inline navbar-select']) !!}
 
