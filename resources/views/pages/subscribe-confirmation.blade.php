@@ -1,7 +1,12 @@
 @extends('template.base')
 
 @section('content')
-<h1>Merci pour votre inscription</h1>
+
+@include('partials.navbar_multi')
+<div class=" alert-success text-center">
+<h1><strong>Succès</strong> Votre inscription à notre Newsletter a bien été envoyé</h1>
+</div>
+
 @endsection
 
 @push('script')

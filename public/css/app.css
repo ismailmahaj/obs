@@ -10,17 +10,13 @@
  */
 
 
+
 /* Responsive */
 @media screen and (min-width: 300px) and (max-width: 1024px){
 
 .row{
   margin-right: 0px!important;
   margin-left: 0px!important;
-}
-#navbar{
-
-  z-index: 999;
-  color: white;
 }
 
 }
@@ -35,6 +31,120 @@
   font-weight: normal;
   font-style: normal;
 }
+
+#contact input.form-control{
+  margin-bottom: 10px;
+}
+#contact .contact_btn{
+
+margin-top: 10px;
+}
+
+#presse .img-responsive{
+margin-bottom: 10px;
+display: inline;
+}
+
+.partenaire{
+  width: 200px;
+  
+}
+
+.mobile-menu{
+
+
+	position: relative;
+
+	display: none;
+
+}
+@media (max-width: 379px){
+#btn-newsletter{
+  margin-top: 10px;
+}
+
+}
+@media (max-width: 640px) {
+
+	.mobile-menu{
+
+		display: block;
+
+		background-color: #000;
+
+		color: #fff;
+
+		padding: 5px 10px;
+
+		cursor: pointer;
+
+	}
+
+	.mobile-menu img{
+
+		width: 30px;
+
+		top: 25px;
+
+		position: absolute;
+
+	}
+
+	nav{
+
+	    position: relative;
+
+	    height: auto;
+
+	}
+
+	nav ul{
+
+		display: none;
+
+	    list-style: none;
+
+	    padding: 0;
+
+	    margin: 0;
+
+	    width: 100%; 
+
+	    top: 0;
+
+	    position: absolute;
+
+	}
+
+	nav ul li{ 
+
+		width: 100%;
+
+		position: relative;
+text-align: center;
+	   
+
+	    background-color: #000;
+
+	    cursor: pointer;
+z-index: 999!important;
+	}
+
+}
+
+@media screen and (min-width: 300px) and (max-width: 1024px){
+  .row{
+    margin-left: 0px!important;
+    margin-right: 0px!important;
+  }
+
+
+
+
+  
+}
+
+
 
 /* Layout helpers
 ----------------------------------*/
@@ -6400,7 +6510,7 @@ tbody.collapse.in {
   overflow-y: auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 319px) {
   .navbar-collapse {
     width: auto;
     border-top: 0;
@@ -6549,7 +6659,7 @@ tbody.collapse.in {
 }
 
 .navbar-nav {
-  margin: 7px -15px;
+  margin-right: -40px;
 }
 
 .navbar-nav > li > a {

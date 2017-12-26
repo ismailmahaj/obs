@@ -52,3 +52,26 @@
             </div><!-- /.navbar-collapse -->
         </div>
     </nav>
+
+    @section('navmobile')
+<div class="wrap">
+<span class="decor"></span>
+<nav>
+  <ul class="primary">
+    <li>
+      <a href="">Menu Mobile</a>
+      <ul class="sub">
+        <li><a href="{{route('pages.index')}}">{{ trans('nav.accueil') }}</a></li>
+        <li><a href="{{route('pages.index')}}#evenements">{{ trans('nav.evenements') }}</a></li>
+        <li><a href="{{route('pages.index')}}#galerie">{{ trans('nav.photos') }}</a></li>
+        <li><a href="{{route('pages.index')}}#videos">{{ trans('nav.videos') }}</a></li>
+        <li><a href="{{route('pages.index')}}#biographie">{{ trans('nav.bio') }}</a></li>
+        <li><a href="{{route('pages.index')}}#presse">{{ trans('nav.presse') }}</a></li>
+        <li><a href="{{route('pages.index')}}#contact">{{ trans('nav.contact') }}</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+@endsection;

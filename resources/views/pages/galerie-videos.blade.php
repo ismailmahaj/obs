@@ -1,7 +1,7 @@
 <div id="videos">
     <div class="container">
         <div class="row espace">
-        <h1 class="titre-white">{{trans('sections.videos')}}</h1>
+        <h1 class="titre-black">{{trans('sections.videos')}}</h1>
         </div>
         <div data-aos="fade-left">
             <div class="row">
@@ -23,10 +23,11 @@
             <div class="col-md-2 col-md-offset-5 more">
                 
                 <a href="{{ route('videos') }}" id="voir-plus-images">
-                    <button type="button" class="btn btn-default bouton-images">Voir plus
+                    <button type="button" class="btn btn-default bouton-articles">Voir plus
                     </button>
                 </a>
             </div>
         </div>
     </div>
 </div>
+<hr style="border: 1px solid grey;">
