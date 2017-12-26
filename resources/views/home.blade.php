@@ -155,7 +155,7 @@
             </section>
 
             <!-- Main content -->
-<<<<<<< HEAD
+
         <section class="content">
         <div class="row">
    
