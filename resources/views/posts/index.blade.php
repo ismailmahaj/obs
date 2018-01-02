@@ -44,7 +44,7 @@
     <td>{{ $post->adresse }}</td>
     <td>{{ $post->description }}</td>
     <td>{{ $post->lien_billetterie }}</td>
-    <td>{{ $post->lien_image }}</td>
+    <td>{{ $post->lien_image}}</td>
     <td>
         <a class="btn btn-info btn-sm" href="{{ route('posts.show',$post->id) }}"><i class="glyphicon glyphicon-th-large"></i></a>
         <a class="btn btn-primary btn-sm" href="{{ route('posts.edit',$post->id) }}"><i class="glyphicon glyphicon-pencil"></i></a>

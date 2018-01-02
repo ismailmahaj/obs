@@ -197,8 +197,6 @@
              <form action="{{ URL::to('upload') }}" method="post" enctype="multipart/form-data">
   <div class="form-group">
             <strong>Fichier Image</strong>
-   
-          
     
     <input type="hidden" value="{{ csrf_token() }}" name="_token">
     <input type="submit" value="Upload" name="submit">

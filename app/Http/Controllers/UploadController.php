@@ -16,6 +16,7 @@ public function upload(){
 // }
 
 }
+                                        // <!--<img class="img-responsive" src="{{ url('uploads/projet/$event->id/$event->lien_image) }}">-->
 
 
 }
