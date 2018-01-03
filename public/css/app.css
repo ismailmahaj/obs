@@ -9,6 +9,11 @@
  * http://api.jqueryui.com/category/theming/
  */
 
+.lang{
+  color: white;
+  text-transform: uppercase;
+  padding-left: 10px;
+}
 
 #contact input.form-control{
   margin-bottom: 10px;
@@ -42,6 +47,10 @@ display: inline;
 
 }
 @media (max-width: 640px) {
+#navbar{
+  height: 0!important;
+}
+
 
 	.mobile-menu{
 
@@ -6636,6 +6645,7 @@ tbody.collapse.in {
 
 .navbar-nav {
   margin-right: -40px;
+  margin-left: -40px;
 }
 
 .navbar-nav > li > a {
