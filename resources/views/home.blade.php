@@ -24,7 +24,7 @@
             <nav class="navbar navbar-static-top">
               <!-- Sidebar toggle button-->
               <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-               
+
               </a>
 
               <div class="navbar-custom-menu">
@@ -33,28 +33,34 @@
                   <li class="dropdown messages-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <i class="fa fa-envelope-o"></i>
+
                       <span class="label label-success">2</span>
+
                     </a>
 
                   </li>
-                 
+
                   <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      
+
+
                       <span class="hidden-xs">{{Auth::user()->name}}</span>
+
                     </a>
                     <ul class="dropdown-menu">
                       <!-- User image -->
                       <li class="user-header">
+
                         <img src="{{('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+
 
                         <p>
                          Oussama Benali - Comédien
-                        
+
                         </p>
                       </li>
-                  
-                     
+
+
                       <!-- Menu Footer-->
                       <li class="user-footer">
                         <div class="pull-left">
@@ -83,10 +89,12 @@
               <!-- Sidebar user panel -->
               <div class="user-panel">
                 <div class="pull-left image">
-                  <img src="" class="img-circle" alt="">
+
+                  <img src="{{('admin/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                  <p>{{ Auth::user()->name  }}</p>
+                  <p>{{ Auth::user()->name }} </p>
+
                   <a href="#">
                     <i class="fa fa-circle text-success"></i>En ligne</a>
                 </div>
@@ -116,15 +124,15 @@
                   </a>
                   <ul class="treeview-menu">
                     <li class="active">
+
                       <a href="{{('admin/export')}}">
                         <i class="fa fa-circle-o"></i> Newsletter e-mail Excel</a>
+
                     </li>
-                   
+
                   </ul>
                 </li>
-                
-                  
-               
+
               </ul>
             </section>
             <!-- /.sidebar -->
@@ -147,28 +155,30 @@
             </section>
 
             <!-- Main content -->
+
         <section class="content">
         <div class="row">
-   
-    
+
+
         <div id="modalarticle">
- 
+
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">AJOUTER UN ARTICLE</button>
 
-  
+
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Ajouts événèments</h4>
         </div>
-        <div class="modal-body">        
+        <div class="modal-body">
 {!! Form::open(array('route' => 'posts.store','method'=>'POST', 'files' => true)) !!}
+
 
      @include('posts.form')
 
@@ -179,25 +189,26 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
         </div>
       </div>
-      
+
     </div>
   </div>
 <hr>
 <h2>UPLOAD UNE PHOTO</h2>
-             <form action="{{ URL::to('upload') }}" method="post" enctype="multipart/form-data">
+             <!--<form action="{{ URL::to('upload') }}" method="post" enctype="multipart/form-data">-->
+             {!! Form::open(array('route' => 'upload.store','method'=>'POST', 'files' => true)) !!}
   <div class="form-group">
             <strong>Fichier Image</strong>
-   
-          
-    
+            {!! Form::file('galerie_img', null, array('class' => 'form-control', 'enctype' => 'multipart/form-data')) !!}
+            <!--<input type="file" name="lien_image" id="file">-->
     <input type="hidden" value="{{ csrf_token() }}" name="_token">
     <input type="submit" value="Upload" name="submit">
         </div>
-    </form>
+{!! Form::close() !!}
+
 </div>
 
-        
-   
+
+
 </div>
 
         </section>
@@ -205,7 +216,7 @@
           </div>
           <!-- /.content-wrapper -->
           <footer class="main-footer">
-            
+
             <strong>Copyright &copy; 2017
               <a target="_blank" href="https://www.facebook.com/molengeek/?ref=br_rs">Amaya | MolenIT</a>.</strong> All rights reserved.
           </footer>
