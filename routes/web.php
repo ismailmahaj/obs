@@ -63,7 +63,7 @@ Route::get('/articles', ['as' => 'articles', function () {
 // 	Route::get('/admin/membre/remove/{membre}', 'AdminController@destroy');
 // 	Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 // });
-Route::group(['middleware' => 'auth'], function () {
+
 Auth::routes();
 Route::post('/storeMember', 'StaticViewsController@storeMember');
 
@@ -79,7 +79,7 @@ Route::get('/galerie-videos', ['as' => 'galerie-videos', function () {
     return view('pages/galerie-videos');
 }]);
 
-Route::post('changelocale', ['as' => 'changelocale', 'uses' => 'TranslationController@changeLocale']);
+//Route::post('changelocale', ['as' => 'changelocale', 'uses' => 'TranslationController@changeLocale']);
 
 // Route::group(['prefix' => 'admin'], function () {
     //     Voyager::routes();
@@ -90,11 +90,13 @@ Route::post('changelocale', ['as' => 'changelocale', 'uses' => 'TranslationContr
     
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('posts', 'PostController');
-});
 
+//  langue 
+Route::post('switchlang/{lang}', ['as'=>'lang.switch', 'uses'=>'TranslationController@switchLang']);
+Route::get('switchlang/{lang}', ['as'=>'lang.switch', 'uses'=>'TranslationController@switchLang']);
 
 /*  UPLOAD PHOTO ROUTE   */
-// Route::post('upload', 'UploadController@upload');
+// Route::post('/home', 'UploadController@upload');
 
 
 /* Confirmation e-mail (Ismail à verifier)   */

@@ -7,7 +7,7 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
-@import "~font-awesome/css/font-awesome.min";
+@import "node_modules/font-awesome/scss/font-awesome.scss"; 
 @import "~jquery-ui/themes/base/all.css";
 @import "~jquery-ui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css";
 @import "animate.min";
@@ -16,3 +16,4 @@
 @import "galeries";
 //@import "style";
 @import "styleesss";
+@import "";

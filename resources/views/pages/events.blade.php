@@ -54,7 +54,7 @@
                         <div class="col-md-2 jour">{{ date('d',strtotime($event->date)) }}
                         <div class="mois">{{ strftime('%B',strtotime($event->date))}}</div></div>
 
-                        <div class="col-md-4">Bruxelles
+                        <div class="col-md-4">{{$event->lieu}}
                         <?php setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1'); ?>
                         
                         <div class="infos">{{ date('G',strtotime($event->date)) }}h / {{ $event->adresse }}</div></div>

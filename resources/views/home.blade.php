@@ -156,8 +156,7 @@
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">AJOUTER UN ARTICLE</button>
 
-  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModaldeux">UPLOAD UNE PHOTO</button>
-<hr>
+  
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -169,15 +168,12 @@
           <h4 class="modal-title">Ajouts événèments</h4>
         </div>
         <div class="modal-body">        
-{!! Form::open(array('route' => 'posts.store','method'=>'POST', 'enctype '=>'multipart/form-data')) !!}
+{!! Form::open(array('route' => 'posts.store','method'=>'POST', 'files' => true)) !!}
 
      @include('posts.form')
 
 {!! Form::close() !!}
- <!--<form action="{{ URL::to('upload') }}" method="post" enctype="multipart/form-data">-->
-   
-    
-    <!--</form>-->
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
@@ -186,38 +182,18 @@
       
     </div>
   </div>
-  <div class="modal fade" id="myModaldeux" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Ajouts d'images</h4>
-        </div>
-        <div class="modal-body">
+<hr>
+<h2>UPLOAD UNE PHOTO</h2>
+             <form action="{{ URL::to('upload') }}" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+            <strong>Fichier Image</strong>
+   
           
-<!--{!! Form::open(array('route' => 'posts.store','method'=>'POST')) !!}-->
-
-    <h1>Upload Photo</h1>
-   
-
-
-{!! Form::close() !!}
-
-
-
-
-
-
+    
+    <input type="hidden" value="{{ csrf_token() }}" name="_token">
+    <input type="submit" value="Upload" name="submit">
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+    </form>
 </div>
 
         
