@@ -19,7 +19,7 @@ Route::get('/', [
 ]);
 
 Route::get('/photos', [
-    "uses" => "UsersController@show_photos",
+    "uses" => "UploadController@store",
     "as" => "photos",
 ]);
 
