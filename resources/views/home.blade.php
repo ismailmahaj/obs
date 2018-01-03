@@ -24,7 +24,7 @@
             <nav class="navbar navbar-static-top">
               <!-- Sidebar toggle button-->
               <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-               
+
               </a>
 
               <div class="navbar-custom-menu">
@@ -39,11 +39,11 @@
                     </a>
 
                   </li>
-                 
+
                   <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-                      
+
                       <span class="hidden-xs">{{Auth::user()->name}}</span>
 
                     </a>
@@ -56,11 +56,11 @@
 
                         <p>
                          Oussama Benali - Comédien
-                        
+
                         </p>
                       </li>
-                  
-                     
+
+
                       <!-- Menu Footer-->
                       <li class="user-footer">
                         <div class="pull-left">
@@ -129,7 +129,7 @@
                         <i class="fa fa-circle-o"></i> Newsletter e-mail Excel</a>
 
                     </li>
-                   
+
                   </ul>
                 </li>
 
@@ -158,25 +158,25 @@
 
         <section class="content">
         <div class="row">
-   
-    
+
+
         <div id="modalarticle">
- 
+
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">AJOUTER UN ARTICLE</button>
 
-  
+
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Ajouts événèments</h4>
         </div>
-        <div class="modal-body">        
+        <div class="modal-body">
 {!! Form::open(array('route' => 'posts.store','method'=>'POST', 'files' => true)) !!}
 
 
@@ -189,7 +189,7 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
         </div>
       </div>
-      
+
     </div>
   </div>
 <hr>
@@ -204,11 +204,11 @@
     <input type="submit" value="Upload" name="submit">
         </div>
 {!! Form::close() !!}
-    
+
 </div>
 
-        
-   
+
+
 </div>
 
         </section>
@@ -216,7 +216,7 @@
           </div>
           <!-- /.content-wrapper -->
           <footer class="main-footer">
-            
+
             <strong>Copyright &copy; 2017
               <a target="_blank" href="https://www.facebook.com/molengeek/?ref=br_rs">Amaya | MolenIT</a>.</strong> All rights reserved.
           </footer>

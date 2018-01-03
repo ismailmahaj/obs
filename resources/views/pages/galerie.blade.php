@@ -10,7 +10,7 @@
                     @if($count < 8)
                         <div class='col-md-3'>
                             <div class='thumb'>
-                                <a data-fancybox='photos' href="{{ url('uploads/projet/galerie/' . $event->galerie_img) }}">
+                                <a data-fancybox='photos' href="{{ url('uploads/projet/galerie/' . $event->lien_image) }}">
                                     <img class='img-responsive preview center-block' src="{{  url('uploads/projet/galerie/' . $event->galerie_img) }}" alt='{{ $event->nom }}'>
                                 </a>
                             </div>
