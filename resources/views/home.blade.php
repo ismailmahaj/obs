@@ -195,10 +195,11 @@
 <hr>
 <h2>UPLOAD UNE PHOTO</h2>
              <!--<form action="{{ URL::to('upload') }}" method="post" enctype="multipart/form-data">-->
-             {!! Form::open(array('route' => 'posts.store','method'=>'POST', 'files' => true)) !!}
+             {!! Form::open(array('route' => 'upload.store','method'=>'POST', 'files' => true)) !!}
   <div class="form-group">
             <strong>Fichier Image</strong>
-    <input type="file" name="galerie_img" id="file" enctype="multipart/form-data">
+            {!! Form::file('galerie_img', null, array('class' => 'form-control', 'enctype' => 'multipart/form-data')) !!}
+            <!--<input type="file" name="lien_image" id="file">-->
     <input type="hidden" value="{{ csrf_token() }}" name="_token">
     <input type="submit" value="Upload" name="submit">
         </div>

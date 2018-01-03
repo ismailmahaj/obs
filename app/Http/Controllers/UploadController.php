@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use \Input as Input;
 use Illuminate\Http\Request;
 use Image;
-use App\Medias;
+use App\Media;
 
 class UploadController extends Controller{
 
@@ -12,7 +12,7 @@ class UploadController extends Controller{
     {
         {
 
-            $media= Medias::latest()->paginate(10);
+            $media= Media::latest()->paginate(10);
             return view('posts.index',compact('Medias'))
                 ->with('i', ($request->input('page', 1) - 1) * 10);
                 // dd($request);
@@ -24,7 +24,7 @@ class UploadController extends Controller{
     {
        
 
-$projet = new Medias();
+$projet = new Media();
             $projet->lien = strip_tags($request->input('lien'));
             $projet->galerie_img = strip_tags($request->file('galerie_img')->getClientOriginalName());
             // dd($request->file('galerie_img')->getClientOriginalName());
@@ -32,7 +32,7 @@ $projet = new Medias();
      
 if ($request->file('galerie_img')) {
             // Upload new groups logo
-             $destination = public_path() . '/uploads/projet/galerie/' ; //$projet->id .'/' ;
+             $destination = public_path() . '/uploads/projet/galerie/' ;//s. $projet->id .'/' ;
             // // si le fichier n'existe pas alors le creer
             // if (!file_exists($destination)) mkdir($destination, 0777, true);
             // On prends l'extension original de l'image
@@ -57,5 +57,28 @@ if ($request->file('galerie_img')) {
                        ->with('success','Post created successfully');
 
     }
+ }
+ public function show($id)
+ {
+     $post= Post::find($id);
+     return view('posts.show',compact('post'));
+ }
+ public function edit($id)
+ {
+     $post= Post::find($id);
+     return view('posts.edit',compact('post'));
+ }
+ public function update(Request $request, $id)
+ {
+   
+     Post::find($id)->update($request->all());
+     return redirect()->route('posts.index')
+                     ->with('success','Post updated successfully');
+ }
+ public function destroy($id)
+ {
+     Post::find($id)->delete();
+     return redirect()->route('posts.index')
+                     ->with('success','Post deleted successfully');
  }
 }
