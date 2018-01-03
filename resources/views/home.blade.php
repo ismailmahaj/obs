@@ -194,14 +194,16 @@
   </div>
 <hr>
 <h2>UPLOAD UNE PHOTO</h2>
-             <form action="{{ URL::to('upload') }}" method="post" enctype="multipart/form-data">
+             <!--<form action="{{ URL::to('upload') }}" method="post" enctype="multipart/form-data">-->
+             {!! Form::open(array('route' => 'posts.store','method'=>'POST', 'files' => true)) !!}
   <div class="form-group">
             <strong>Fichier Image</strong>
-    
+    <input type="file" name="galerie_img" id="file" enctype="multipart/form-data">
     <input type="hidden" value="{{ csrf_token() }}" name="_token">
     <input type="submit" value="Upload" name="submit">
         </div>
-    </form>
+{!! Form::close() !!}
+    
 </div>
 
         

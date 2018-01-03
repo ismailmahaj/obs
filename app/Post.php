@@ -8,6 +8,6 @@ class Post extends Model
 
 {
 
-    protected $fillable = ['titre','date','lieu','adresse','description','lien_billetterie','lien_image'];
+    protected $fillable = ['titre','date','lieu','adresse','description','lien_billetterie','lien_image', 'galerie_img'];
 
 }
