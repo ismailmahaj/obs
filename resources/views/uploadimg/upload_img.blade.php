@@ -25,12 +25,8 @@
     <tr>
         <th width="80px">No</th>
         <th>Titre</th>
-        <th>date</th>
-        <th>lieu</th>
-        <th>adresse</th>
-        <th>description</th>
-        <th>lien_billetterie</th>
-        <th>lien_image</th>
+        <th>Photo Image</th>
+        
         <th width="140px" class="text-center">
             <a class="btn btn-success btn-sm" href="{{ route('posts.create') }}"><i class="glyphicon glyphicon-plus"></i></a>
         </th>
@@ -38,14 +34,8 @@
 @foreach ($posts as $post)
 <tr>
     <td>{{ ++$i }}</td>
-    <td>{{ $post->titre }}</td>
-    <td>{{ $post->date }}</td>
-    <td>{{ $post->lieu }}</td>
-    <td>{{ $post->adresse }}</td>
-    <td>{{ $post->description }}</td>
-    <td>{{ $post->lien_billetterie }}</td>
-    <td>{{ $post->lien_image}}</td>
-   
+    <td>Titre</td>
+     <td>{{ $post->galerie_img}}</td>
     <td>
         <a class="btn btn-info btn-sm" href="{{ route('posts.show',$post->id) }}"><i class="glyphicon glyphicon-th-large"></i></a>
         <a class="btn btn-primary btn-sm" href="{{ route('posts.edit',$post->id) }}"><i class="glyphicon glyphicon-pencil"></i></a>

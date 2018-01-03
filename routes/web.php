@@ -9,45 +9,42 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-
+ */
 
 Route::get('send', 'MailController@send');
 
-
-
 Route::get('/', [
     "uses" => "UsersController@index",
-    "as" => "pages.index"
+    "as" => "pages.index",
 ]);
 
 Route::get('/photos', [
     "uses" => "UsersController@show_photos",
-    "as" => "photos"
+    "as" => "photos",
 ]);
 
 Route::post('/inscription', [
     'uses' => 'SubscribersController@store',
-    'as' => 'subscribe'
+    'as' => 'subscribe',
 ]);
 
 Route::post('/contact', [
     'uses' => 'ContactController@store',
-    'as' => 'contact'
+    'as' => 'contact',
 ]);
 
 Route::get('/videos', [
     "uses" => "VideosController@index",
-    "as" => "videos"
+    "as" => "videos",
 ]);
 
-Route::get('admin/newsletter', function(){
+Route::get('admin/newsletter', function () {
     return view('admin.csv');
 });
 
 Route::get('admin/generate_csv', [
     'uses' => 'SubscribersController@generate_csv',
-    'as' => 'admin.generate_csv'
+    'as' => 'admin.generate_csv',
 ]);
 
 Route::get('/articles', ['as' => 'articles', function () {
@@ -56,58 +53,61 @@ Route::get('/articles', ['as' => 'articles', function () {
 
 //  route admin
 // Route::group(['middleware' => 'auth'], function () {
-// 	Route::get('/admin', 'AdminController@getDashboard');
-// 	Route::get('/admin/export', 'AdminController@export');
-// 	Route::get('/admin/membre', 'AdminController@addMember');
-// 	Route::post('/admin/membre', 'AdminController@storeMember');
-// 	Route::post('/admin/membre/search', 'AdminController@search');
-// 	Route::get('/admin/membres', 'AdminController@getMembers');
-// 	Route::get('/admin/membre/{membre}', 'AdminController@showMember');
-// 	Route::get('/admin/membre/edit/{membre}', 'AdminController@editMember');
-// 	Route::post('/admin/membre/edit/{membre}', 'AdminController@updateMember');
-// 	Route::get('/admin/membre/remove/{membre}', 'AdminController@destroy');
-// 	Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+//     Route::get('/admin', 'AdminController@getDashboard');
+//     Route::get('/admin/export', 'AdminController@export');
+//     Route::get('/admin/membre', 'AdminController@addMember');
+//     Route::post('/admin/membre', 'AdminController@storeMember');
+//     Route::post('/admin/membre/search', 'AdminController@search');
+//     Route::get('/admin/membres', 'AdminController@getMembers');
+//     Route::get('/admin/membre/{membre}', 'AdminController@showMember');
+//     Route::get('/admin/membre/edit/{membre}', 'AdminController@editMember');
+//     Route::post('/admin/membre/edit/{membre}', 'AdminController@updateMember');
+//     Route::get('/admin/membre/remove/{membre}', 'AdminController@destroy');
+//     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 // });
 Route::group(['middleware' => 'auth'], function () {
-Auth::routes();
-Route::post('/storeMember', 'StaticViewsController@storeMember');
+    Auth::routes();
+    Route::post('/storeMember', 'StaticViewsController@storeMember');
 
-Route::get('/biographie', ['as' => 'biographie', function () {
-    return view('pages/bio');
-}]);
+    Route::get('/biographie', ['as' => 'biographie', function () {
+        return view('pages/bio');
+    }]);
 
-Route::get('/evenements', ['as' => 'evenements', function () {
-    return view('pages/evenements');
-}]);
+    Route::get('/evenements', ['as' => 'evenements', function () {
+        return view('pages/evenements');
+    }]);
 
-Route::get('/galerie-videos', ['as' => 'galerie-videos', function () {
-    return view('pages/galerie-videos');
-}]);
+    Route::get('/galerie-videos', ['as' => 'galerie-videos', function () {
+        return view('pages/galerie-videos');
+    }]);
 
-Route::post('changelocale', ['as' => 'changelocale', 'uses' => 'TranslationController@changeLocale']);
+    Route::post('changelocale', ['as' => 'changelocale', 'uses' => 'TranslationController@changeLocale']);
 
 // Route::group(['prefix' => 'admin'], function () {
     //     Voyager::routes();
     // });
-    
-    
+
     Auth::routes();
-    
+
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('posts', 'PostController');
 });
 
-
 /*  UPLOAD PHOTO ROUTE   */
-Route::resource('uploads', 'UploadController');
 
-
+Route::post('/upload-image', [
+    'uses' => 'UploadController@store',
+    'as' => 'upload.store',
+    
+]);
+Route::get('uploadimg/upload_img', 'UploadController@store');
+Route::resource('uploadimg/upload_img', 'UploadController');
 
 /* Confirmation e-mail (Ismail à verifier)   */
 // Route::get('/confirm/{token}', function ($token) {
 //   $user = User::whereConfirmationToken($token)->firstOrFail();
 //   $user->confirmed_at = now();
-  /* Nous devrions également définir le paramètre confirmation_token sur null */
+/* Nous devrions également définir le paramètre confirmation_token sur null */
 //   $user->confirmation_token = null;
 //   $user->save();
 //   return view('confirmed');
@@ -118,4 +118,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
