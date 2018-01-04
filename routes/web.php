@@ -81,6 +81,7 @@ Route::group(['middleware' => 'auth'], function () {
         return view('pages/galerie-videos');
     }]);
 
+    Route::post('/changelocale', ['as' => 'changelocale', 'uses' => 'TranslationController@changeLocale']);
 
 // Route::group(['prefix' => 'admin'], function () {
     //     Voyager::routes();
@@ -94,8 +95,6 @@ Route::group(['middleware' => 'auth'], function () {
         'as' => 'upload.store'
     ]);
 });
-Route::post('switchlang/{lang}', ['as'=>'lang.switch', 'uses'=>'TranslationController@switchLang']);
-Route::get('switchlang/{lang}', ['as'=>'lang.switch', 'uses'=>'TranslationController@switchLang']);
 
 /*  UPLOAD PHOTO ROUTE   */
 
@@ -114,6 +113,3 @@ Route::get('switchlang/{lang}', ['as'=>'lang.switch', 'uses'=>'TranslationContro
 // Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
-
-
-//  langue 

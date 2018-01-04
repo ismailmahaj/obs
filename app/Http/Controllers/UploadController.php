@@ -48,7 +48,7 @@ class UploadController extends Controller
             // On utilise l'image enregistrer avec sa taile et sa destination de sauvegarde
             $img = Image::make($request->file('galerie_img'))->resize(300, 300);
             //    dd($img);
-            $img->save($destination.$name);
+            $img->save($destination . $name);
 
 // dd($destination);
             return redirect()->route('posts.index')
