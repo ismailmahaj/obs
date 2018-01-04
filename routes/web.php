@@ -52,9 +52,9 @@ Route::get('/articles', ['as' => 'articles', function () {
 }]);
 
 //  route admin
-// Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth'], function () {
 //     Route::get('/admin', 'AdminController@getDashboard');
-//     Route::get('/admin/export', 'AdminController@export');
+    Route::get('/admin/export', 'AdminController@export');
 //     Route::get('/admin/membre', 'AdminController@addMember');
 //     Route::post('/admin/membre', 'AdminController@storeMember');
 //     Route::post('/admin/membre/search', 'AdminController@search');
@@ -64,7 +64,7 @@ Route::get('/articles', ['as' => 'articles', function () {
 //     Route::post('/admin/membre/edit/{membre}', 'AdminController@updateMember');
 //     Route::get('/admin/membre/remove/{membre}', 'AdminController@destroy');
 //     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
-// });
+});
 Route::group(['middleware' => 'auth'], function () {
     Auth::routes();
     Route::post('/storeMember', 'StaticViewsController@storeMember');
