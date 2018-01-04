@@ -11,19 +11,20 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <div class="container">
                 <ul class="nav navbar-nav">
-                        <li><a class="liens" href="{{route('pages.index')}}" >@lang('nav.accueil')</a></li>
-                        <li><a class="liens events-link" href="{{route('pages.index')}}#evenements" >@lang('nav.evenements')</a></li>
-                        <li><a class="liens events-link" href="{{route('pages.index')}}#galerie" >@lang('nav.photos')</a></li>
-                        <li><a class="liens events-link" href="{{route('pages.index')}}#videos" >@lang('nav.videos')</a></li>
-                        <li><a class="liens events-link" href="{{route('pages.index')}}#biographie">@lang('nav.bio')</a></li>
-                        <li><a class="liens events-link" href="{{route('pages.index')}}#presse" >@lang('nav.presse')</a></li>
-                        <li><a class="liens events-link" href="{{route('pages.index')}}#contact" >@lang('nav.contact')</a></li>
+                        <li><a class="liens" href="{{route('pages.index')}}" >{{ trans('nav.accueil') }}</a></li>
+                        <li><a class="liens events-link" href="{{route('pages.index')}}#evenements" >{{ trans('nav.evenements') }}</a></li>
+                        <li><a class="liens events-link" href="{{route('pages.index')}}#galerie" >{{ trans('nav.photos') }}</a></li>
+                        <li><a class="liens events-link" href="{{route('pages.index')}}#videos" >{{ trans('nav.videos') }}</a></li>
+                        <li><a class="liens events-link" href="{{route('pages.index')}}#biographie">{{ trans('nav.bio') }}</a></li>
+                        <li><a class="liens events-link" href="{{route('pages.index')}}#presse" >{{ trans('nav.presse') }}</a></li>
+                        <li><a class="liens events-link" href="{{route('pages.index')}}#contact" >{{ trans('nav.contact') }}</a></li>
+                </ul>
+                
                 
                 <!--<ul class="nav navbar-nav nav-right pull-right">
                     <li><a href="https://www.facebook.com/" target="_blank" class="social-media-head"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
                     <li><a href="https://twitter.com/" target="_blank" class="social-media-head"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
                     <li><a href="https://instagram.com/" target="_blank" class="social-media-head"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-
                 </ul>-->
 
 
@@ -47,10 +48,6 @@
 
    
     
-   </ul>   
-
-
-                
 
             
                 
