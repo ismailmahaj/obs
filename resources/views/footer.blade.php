@@ -81,8 +81,8 @@
     
         <div class="sub_footer">
         <div class="container">
-            <div class="col-md-6">
-                <span>Oussama Benali © 2017 - Tous droits réservés</span>
+<div class="col-md-12 text-center">
+                <span>Oussama Benali © 2017 - Tous droits réservés. Made MolenGeek by Amaya | MolenIT</span>
             </div>
         </div>
     </div>

@@ -15,6 +15,9 @@
   padding-left: 10px;
 }
 
+
+
+
 /*   FONT AWESOME  */
 
 @font-face {
@@ -54,6 +57,10 @@ display: inline;
 #btn-newsletter{
   margin-top: 10px;
 }
+.xsmodif{
+  width: 100%!important;
+}
+
 
 }
 @media (max-width: 640px) {
