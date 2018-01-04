@@ -18,23 +18,6 @@
                         <li><a class="liens events-link" href="{{route('pages.index')}}#biographie">@lang('nav.bio')</a></li>
                         <li><a class="liens events-link" href="{{route('pages.index')}}#presse" >@lang('nav.presse')</a></li>
                         <li><a class="liens events-link" href="{{route('pages.index')}}#contact" >@lang('nav.contact')</a></li>
-                        <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        {{ config('app.locale') }}
-    </a>
-    <ul class="dropdown-menu">
-        @foreach (config('app.languages') as $language)
-        
-            @if ($language != config('app.locale'))
-                <li>
-                    <a href="{{ route('lang.switch', $language) }}">{{$language}}</a>
-                </li>
-            @endif
-        @endforeach
-    </ul>
-</li>
-                </ul>
-                
                 
                 <!--<ul class="nav navbar-nav nav-right pull-right">
                     <li><a href="https://www.facebook.com/" target="_blank" class="social-media-head"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
