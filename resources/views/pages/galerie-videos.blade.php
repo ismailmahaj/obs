@@ -1,16 +1,16 @@
 <div id="videos">
     <div class="container">
         <div class="row espace">
-        <h1 class="titre-white">{{trans('sections.videos')}}</h1>
+        <h1 class="text-center">{{trans('sections.videos')}}</h1>
         </div>
         <div data-aos="fade-left">
             <div class="row">
-                @foreach($events as $event)
-                    @if($event->ordre <= 8 && $event->ordre != 0)
+                @foreach($videos as $video)
+                    @if($video->ordre <= 8 && $video->ordre != 0)
                     <div class="col-md-3">
                         <div class="thumb">
-                        <a data-fancybox href="{{$event->lien}}">
-                        <img src="{{ url('/storage/' . $event->miniature) }}">
+                        <a data-fancybox="photos" href="{{$video->lien_video}}">
+                        <img src="{{ url('uploads/projet/galerie/videos/' . $video->img_video) }}">
                         </a>
                         </div>
                     </div>

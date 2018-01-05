@@ -15,7 +15,9 @@
   padding-left: 10px;
 }
 
-
+#presse{
+  width: 100%;
+}
 
 
 /*   FONT AWESOME  */
@@ -16351,11 +16353,11 @@ a#voir-plus {
 /* Gallerie images */
 button.btn.btn-default.bouton-images {
   background-color: transparent;
-  border: 2px solid white;
+  border: 2px solid;
   border-radius: 0px;
   padding: 15px 40px;
   margin-bottom: 10px;
-  color: white;
+ 
 }
 
 button.btn.btn-default.bouton-images:hover {

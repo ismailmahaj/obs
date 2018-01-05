@@ -33,10 +33,49 @@ Route::post('/contact', [
     'as' => 'contact',
 ]);
 
-Route::get('/videos', [
-    "uses" => "VideosController@index",
+Route::group(['middleware' => 'auth'], function () {
+
+
+    Route::get('/videos', [
+        "uses" => 'VideosController@index',
+        "as" => 'videos.index',       
+    ]);
+   Route::get('/videos/create', [
+       "uses" => 'VideosController@create',
+       "as" => 'videos.create',
+   ]);
+   Route::post('/videos/store', [
+       "uses" => 'VideosController@store',
+       "as" => 'videos.store',
+   ]);
+   Route::get('/videos/{id}', [
+       "uses" => 'VideosController@show',
+       "as" => 'videos.show',
+   ]);
+   Route::get('/videos/{id}/edit', [
+       "uses" => 'VideosController@edit',
+       "as" => 'videos.edit',
+   ]);
+   Route::get('/videos/{id}/remove', [
+       "uses" => 'VideosController@destroy',
+       "as" => 'videos.destroy',
+   ]);
+
+});
+
+Route::post('/videos', [
+    "uses" => "VideosController@store",
     "as" => "videos",
+    
 ]);
+// Route::get('/videos', [
+//     "uses" => "VideosController@index",
+//     "as" => "videos.index",
+// ]);
+//   Route::post('upload', 'VideosController@store');
+//    Route::resource('/videos', 'VideosController');
+
+
 
 Route::get('admin/newsletter', function () {
     return view('admin.csv');
