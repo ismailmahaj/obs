@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Media;
+use App\Post;
 use Illuminate\Http\Request;
 use Image;
 use \Input as Input;
@@ -13,16 +13,19 @@ class UploadController extends Controller
     public function index(Request $request)
     {
         {
-            
-            $medias = Media::latest()->paginate(10);
-            return view('galerieimg.index', compact('medias'))
+
+            $media = Post::latest()->paginate(10);
+            return view('posts.index', compact('Posts'))
                 ->with('i', ($request->input('page', 1) - 1) * 10);
-    }}
+            // dd($request);
+        }
+
+    }
 
     public function store(Request $request)
     {
 
-        $projet = new Media();
+        $projet = new Post();
         // $projet->lien = strip_tags($request->input('lien'));
         $projet->galerie_img = strip_tags($request->file('galerie_img')->getClientOriginalName());
         // dd($request->file('galerie_img')->getClientOriginalName());
@@ -43,38 +46,38 @@ class UploadController extends Controller
             // $name = $projet->galerie_img . '.' .$extension;
             $projet->galerie_img = $name;
             // On utilise l'image enregistrer avec sa taile et sa destination de sauvegarde
-            $img = Image::make($request->file('galerie_img'))->resize(400, 300);
+            $img = Image::make($request->file('galerie_img'))->resize(300, 300);
             //    dd($img);
-            $img->save($destination . $name);
+            $img->save($destination.$name);
 
 // dd($destination);
-            return redirect()->route('galerieimg.index')
-                ->with('success', 'Media created successfully');
+            return redirect()->route('posts.index')
+                ->with('success', 'Post created successfully');
             // echo ('test');   
 
         }
     }
     public function show($id)
     {
-        $Media = Media::find($id);
-        return view('galerieimg.show', compact('Media'));
+        $post = Post::find($id);
+        return view('posts.show', compact('post'));
     }
     public function edit($id)
     {
-        $Media = Media::find($id);
-        return view('galerieimg.edit', compact('Media'));
+        $post = Post::find($id);
+        return view('posts.edit', compact('post'));
     }
     public function update(Request $request, $id)
     {
 
-        Media::find($id)->update($request->all());
-        return redirect()->route('galerieimg.index')
-            ->with('success', 'Media updated successfully');
+        Post::find($id)->update($request->all());
+        return redirect()->route('posts.index')
+            ->with('success', 'Post updated successfully');
     }
     public function destroy($id)
     {
-        Media::find($id)->delete();
-        return redirect()->route('galerieimg.index')
-            ->with('success', 'Media deleted successfully');
+        Post::find($id)->delete();
+        return redirect()->route('posts.index')
+            ->with('success', 'Post deleted successfully');
     }
 }

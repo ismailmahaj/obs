@@ -194,8 +194,8 @@
   </div>
 <hr>
 <h2>UPLOAD UNE PHOTO</h2>
-             <!--<form action="{{ URL::to('upload') }}" method="post" enctype="multipart/form-data">-->
-             {!! Form::open(array('route' => 'upload.store','method'=>'POST', 'files' => true)) !!}
+             
+             {!! Form::open(array('route' => 'galerieimg.store','method'=>'POST', 'files' => true)) !!}
   <div class="form-group">
             <strong>Fichier Image</strong>
             {!! Form::file('galerie_img', null, array('class' => 'form-control', 'enctype' => 'multipart/form-data')) !!}

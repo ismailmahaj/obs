@@ -33,8 +33,12 @@ Route::post('/contact', [
     'as' => 'contact',
 ]);
 
+
+
+/*        MIDDLEWARE -> DROIT AUTH (USER)                 */
 Route::group(['middleware' => 'auth'], function () {
 
+ /*         ROUTE UPLOAD VIDEO SEULE       */
 
     Route::get('/videos', [
         "uses" => 'VideosController@index',
@@ -61,19 +65,44 @@ Route::group(['middleware' => 'auth'], function () {
        "as" => 'videos.destroy',
    ]);
 
+   /*         ROUTE UPLOAD IMAGE SEULE       */
+
+    Route::get('/galerieimg', [
+        "uses" => 'UploadController@index',
+        "as" => 'galerieimg.index',       
+    ]);
+   Route::get('/galerieimg/create', [
+       "uses" => 'UploadController@create',
+       "as" => 'galerieimg.create',
+   ]);
+   Route::post('/galerieimg/store', [
+       "uses" => 'UploadController@store',
+       "as" => 'galerieimg.store',
+   ]);
+   Route::get('/galerieimg/{id}', [
+       "uses" => 'UploadController@show',
+       "as" => 'galerieimg.show',
+   ]);
+   
+   Route::get('/galerieimg/{id}/edit', [
+       "uses" => 'UploadController@edit',
+       "as" => 'galerieimg.edit',
+   ]);
+
+   Route::post('/galerieimg/{id}', [
+       'uses' => 'UploadController@update',
+       'as' => 'galerieimg.update',
+   ]);
+   Route::get('/galerieimg/{id}/remove', [
+       "uses" => 'UploadController@destroy',
+       "as" => 'galerieimg.destroy',
+   ]);
+
+
 });
 
-Route::post('/videos', [
-    "uses" => "VideosController@store",
-    "as" => "videos",
-    
-]);
-// Route::get('/videos', [
-//     "uses" => "VideosController@index",
-//     "as" => "videos.index",
-// ]);
-//   Route::post('upload', 'VideosController@store');
-//    Route::resource('/videos', 'VideosController');
+
+
 
 
 
@@ -136,17 +165,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::post('switchlang/{lang}', ['as'=>'lang.switch', 'uses'=>'TranslationController@switchLang']);
 Route::get('switchlang/{lang}', ['as'=>'lang.switch', 'uses'=>'TranslationController@switchLang']);
 
-/*  UPLOAD PHOTO ROUTE   */
 
-/* Confirmation e-mail (Ismail à verifier)   */
-// Route::get('/confirm/{token}', function ($token) {
-//   $user = User::whereConfirmationToken($token)->firstOrFail();
-//   $user->confirmed_at = now();
-/* Nous devrions également définir le paramètre confirmation_token sur null */
-//   $user->confirmation_token = null;
-//   $user->save();
-//   return view('confirmed');
-// });
 
 // Route::get('/home', 'HomeController@index')->name('home');
 

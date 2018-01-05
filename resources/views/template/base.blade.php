@@ -57,9 +57,7 @@
 
 
         </script>
-        <script>
-            //$(document).ready(function(){animateText.play(1000);});
-        </script>
+      
     @stack('script', '')
     </body>
 </html>

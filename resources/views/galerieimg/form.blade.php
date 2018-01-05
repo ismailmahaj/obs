@@ -9,11 +9,10 @@
     </div>
 @endif
 
-           {{ Form::open(array('route' => 'videos.store', 'files' => true, 'enctype' => 'multipart/form-data')) }}
+           {{ Form::open(array('route' => 'galerieimg.store', 'files' => true, 'enctype' => 'multipart/form-data')) }}
 
     <!--{{ Form::text('titre_video',null) }} -->
-    {!! Form::file('img_video', null, array('class' => 'form-control') !!}
-    {{ Form::text('lien_video') }}
+    {!! Form::file('galerie_img', null, array('class' => 'form-control', 'enctype' => 'multipart/form-data')) !!}}
     {{ Form::submit('Upload') }}
 {{ Form::close() }}
 </div>

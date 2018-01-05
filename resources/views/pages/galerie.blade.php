@@ -6,12 +6,12 @@
     <div data-aos="fade-right">
         <div class="row">
                 <?php $count = 0; ?>
-                @foreach($events as $event)
+                @foreach($photos as $media)
                     @if($count < 8)
                         <div class='col-md-3'>
                             <div class='thumb'>
-                                <a data-fancybox='photos' href="{{ url('/storage/' . $event->lien) }}">
-                                    <img class='img-responsive preview center-block' src="{{ url('/storage/'.$event->lien)}}" alt='{{ $event->nom }}'>
+                                <a data-fancybox='photos' href="{{  url('uploads/projet/galerie/' . $media->galerie_img) }}">
+                                    <img class='img-responsive preview center-block' src="{{  url('uploads/projet/galerie/' . $media->galerie_img)}}" alt='{{ $media->nom }}'>
                                 </a>
                             </div>
                         </div>

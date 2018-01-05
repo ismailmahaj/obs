@@ -18,7 +18,7 @@
 
             <br/>
 
-            <a class="btn btn-primary" href="{{ route('posts.index') }}"> <i class="glyphicon glyphicon-arrow-left"></i></a>
+            <a class="btn btn-primary" href="{{ route('galerieimg.index') }}"> <i class="glyphicon glyphicon-arrow-left"></i></a>
 
         </div>
 
@@ -26,7 +26,7 @@
 
 </div>
 
-{!! Form::model($video, ['method' => 'POST','route' => ['videos.edit', $video->id]]) !!}
+{!! Form::model($media, ['method' => 'POST','route' => ['galerieimg.edit', $media->id]]) !!}
 
     @include('videos.form')
 

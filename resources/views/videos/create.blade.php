@@ -11,10 +11,13 @@
         </div>
     </div>
 </div>
-{!! Form::open(array('route' => 'posts.store','method'=>'POST')) !!}
 
-     @include('posts.form')
+           {{ Form::open(array('route' => 'videos.store', 'files' => true, 'enctype' => 'multipart/form-data')) }}
 
-{!! Form::close() !!}
+    <!--{{ Form::text('titre_video',null) }} -->
+    {!! Form::file('img_video', null, array('class' => 'form-control', 'enctype' => 'multipart/form-data')) !!}
+    {{ Form::text('lien_video',null) }}
+    {{ Form::submit('Upload') }}
+{{ Form::close() }}
 
 @endsection

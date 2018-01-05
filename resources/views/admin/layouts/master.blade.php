@@ -56,13 +56,7 @@
             </div>
         </div>
 
-        <footer class="footer">
-            <div class="container-fluid">
-                <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="https://www.misterfoxweb.be">Mister Fox Web</a>, Your Web Identity Maker
-                </p>
-            </div>
-        </footer>
+      
 
     </div>
 </div>
