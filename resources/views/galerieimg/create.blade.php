@@ -12,12 +12,14 @@
     </div>
 </div>
 
-           {{ Form::open(array('route' => 'galerieimg.store', 'files' => true, 'enctype' => 'multipart/form-data')) }}
-
- 
-  
-    {!! Form::file('galerie_img', null, array('class' => 'form-control', 'enctype' => 'multipart/form-data')) !!}
-    {{ Form::submit('Upload') }}
-{{ Form::close() }}
+                     {!! Form::open(array('route' => 'galerieimg.store','method'=>'POST', 'files' => true)) !!}
+  <div class="form-group">
+            <strong>Fichier Image</strong>
+            {!! Form::file('galerie_img', null, array('class' => 'form-control', 'enctype' => 'multipart/form-data')) !!}
+            <!--<input type="file" name="lien_image" id="file">-->
+    <input type="hidden" value="{{ csrf_token() }}" name="_token">
+    <input type="submit" value="Upload" name="submit">
+        </div>
+{!! Form::close() !!}
 
 @endsection

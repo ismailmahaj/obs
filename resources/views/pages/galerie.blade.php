@@ -7,8 +7,8 @@
         <div class="row">
                 <?php $count = 0; ?>
                 @foreach($photos as $media)
-                    @if($count < 8)
-                        <div class='col-md-3'>
+                    @if($count < 12)
+                        <div style="margin-bottom: 10px;" class='col-md-3'>
                             <div class='thumb'>
                                 <a data-fancybox='photos' href="{{  url('uploads/projet/galerie/' . $media->galerie_img) }}">
                                     <img class='img-responsive preview center-block' src="{{  url('uploads/projet/galerie/' . $media->galerie_img)}}" alt='{{ $media->nom }}'>
@@ -23,10 +23,7 @@
     <div class="row espace">
         <div class="col-md-2 col-md-offset-5 more">
             
-            <a href="{{route('photos')}}" id="voir-plus-images">
-                <button type="button" class="btn btn-default bouton-images">Voir plus
-                </button>
-            </a>
+       
         </div>
     </div>
 </div>

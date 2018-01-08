@@ -9,8 +9,8 @@
         
                 @foreach($videos as $video)
                 
-                    @if($count < 3 && $video->ordre <= 8)
-                    <div class="col-md-3">
+                    @if($count < 12 && $video->ordre <= 12)
+                    <div style="margin-bottom: 10px;" class="col-md-3">
                         <div class="thumb">
                         <a data-fancybox="photos" href="{{ $video->lien_video }}">
                         <img class='img-responsive preview center-block' src="{{ url('uploads/projet/galerie/videos/' . $video->img_video) }}">
@@ -20,16 +20,17 @@
                     @endif
                     <?php $count++; ?>
                 @endforeach
+                    
             </div>
         </div>
 
         <div class="row espace">
             <div class="col-md-2 col-md-offset-5 more">
                 
-                <a href="{{ route('videos.store') }}" id="voir-plus-images">
+                <!--<a href="{{ route('videos.index') }}" id="voir-plus-images">
                     <button type="button" class="btn btn-default bouton-images">Voir plus
                     </button>
-                </a>
+                </a>-->
             </div>
         </div>
     </div>

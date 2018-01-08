@@ -10,11 +10,13 @@
         
         <title>Oussama Benali</title>
         <link href="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.css">
+        <link rel="stylesheet" href="{{url('admin/bower_components/css/bootstrap.css')}}">
         <link rel="stylesheet" href="{{url('css/app.css')}}">
         <link rel="stylesheet" href="{{url('admin/bower_components/css/style.css')}}">
+   
         
     </head>
-    <body>
+    <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
             @include('pages.header')
             
             @yield('content')
@@ -22,8 +24,14 @@
         <footer>
             @include('footer')
        </footer>
+
+<script src="{{url('admin/dist/js/jquery.js')}}"></script>
+     <script src="{{url('admin/dist/js/bootstrap.js')}}"></script>
+   
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.js"></script>
     <script src="{{url('js/app.js')}}"></script>
+      <script src="{{url('admin/dist/js/jquery.easing.min.js')}}"></script>
+   
         <script>
             AOS.init({
                 offset: 200,
@@ -34,8 +42,6 @@
             $(window).on('load', function () {
                 AOS.refresh();
             });
-
-           
 
   $(function() {
         var pull = $('#mobile-menu');
@@ -53,7 +59,20 @@
         });
     });
 
+$(document).ready(function () {
+     $('a[href^="{{route('pages.index')}}#"]').on('click', function (e) {
+         e.preventDefault();
 
+         var target = this.hash,
+             $target = $(target);
+
+         $('html, body').stop().animate({
+             'scrollTop': $target.offset().top - 80
+         }, 900, 'swing', function () {
+             window.location.hash = target;
+         });
+     });
+ });
 
 
         </script>

@@ -9,6 +9,10 @@
  * http://api.jqueryui.com/category/theming/
  */
 
+
+
+
+
 .lang{
   color: white;
   text-transform: uppercase;
@@ -49,11 +53,8 @@ display: inline;
 }
 
 .mobile-menu{
-
 	position: relative;
-
 	display: none;
-
 }
 @media (max-width: 379px){
 #btn-newsletter{

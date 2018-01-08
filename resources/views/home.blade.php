@@ -30,29 +30,13 @@
               <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
                   <!-- Messages: style can be found in dropdown.less-->
-                  <li class="dropdown messages-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-envelope-o"></i>
+                 
 
-                      <span class="label label-success">2</span>
-
-                    </a>
-
-                  </li>
-
-                  <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-
-
-                      <span class="hidden-xs">{{Auth::user()->name}}</span>
-
-                    </a>
+                
+                    
                     <ul class="dropdown-menu">
                       <!-- User image -->
                       <li class="user-header">
-
-                        <img src="{{('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
-
 
                         <p>
                          Oussama Benali - Comédien
@@ -73,11 +57,7 @@
                     </ul>
                   </li>
                   <!-- Control Sidebar Toggle Button -->
-                  <li>
-                    <a href="#" data-toggle="control-sidebar">
-                      <i class="fa fa-gears"></i>
-                    </a>
-                  </li>
+                  
                 </ul>
               </div>
             </nav>
@@ -90,7 +70,7 @@
               <div class="user-panel">
                 <div class="pull-left image">
 
-                  <img src="{{('admin/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+                  <img src="{{('admin/dist/img/ouss.png')}}" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                   <p>{{ Auth::user()->name }} </p>
@@ -99,21 +79,10 @@
                     <i class="fa fa-circle text-success"></i>En ligne</a>
                 </div>
               </div>
-              <!-- search form -->
-              <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                  <input type="text" name="q" class="form-control" placeholder="Rechercher...">
-                  <span class="input-group-btn">
-                    <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                      <i class="fa fa-search"></i>
-                    </button>
-                  </span>
-                </div>
-              </form>
-              <!-- /.search form -->
+            
               <!-- sidebar menu: : style can be found in sidebar.less -->
               <ul class="sidebar-menu" data-widget="tree">
-                <li class="header">Option admin</li>
+                
                 <li class="active treeview">
                   <a href="#">
                     <i class="fa fa-dashboard"></i>
@@ -142,8 +111,10 @@
           <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-              <h1>
-                Oussama Benali
+              <h1 class='oussama'>
+                
+                OUSSAMA BENALI
+               
               </h1>
               <ol class="breadcrumb">
                 <li>
@@ -156,11 +127,13 @@
 
             <!-- Main content -->
 
-        <section class="content">
-        <div class="row">
+        <section class="content formhome">
+        <div class="row text-center">
 
 
         <div id="modalarticle">
+<h2><strong>AJOUTER UN ARTICLE</strong></h2>
+
 
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">AJOUTER UN ARTICLE</button>
@@ -193,15 +166,17 @@
     </div>
   </div>
 <hr>
-<h2>UPLOAD UNE PHOTO</h2>
+<h2><strong>UPLOAD UNE PHOTO</strong></h2>
              
-             {!! Form::open(array('route' => 'galerieimg.store','method'=>'POST', 'files' => true)) !!}
+             {!! Form::open(array('route' => 'galerieimg.store','method'=>'POST', 'files' => true, 'class' => 'formcss')) !!}
   <div class="form-group">
+
             <strong>Fichier Image</strong>
-            {!! Form::file('galerie_img', null, array('class' => 'form-control', 'enctype' => 'multipart/form-data')) !!}
-            <!--<input type="file" name="lien_image" id="file">-->
+
+            {!! Form::file('galerie_img', null, array('enctype' => 'multipart/form-data', 'class' => 'form-control')) !!}
+          
     <input type="hidden" value="{{ csrf_token() }}" name="_token">
-    <input type="submit" value="Upload" name="submit">
+    <input class="submitbtn" type="submit" value="Upload" name="submit">
         </div>
 {!! Form::close() !!}
 
@@ -209,7 +184,7 @@
 <hr>
 
 
-<h2>UPLOAD VIDEO</h2>
+<h2><strong>UPLOAD VIDEO</strong></h2>
 
            {{ Form::open(array('route' => 'videos.store', 'files' => true, 'enctype' => 'multipart/form-data')) }}
 

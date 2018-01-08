@@ -1,4 +1,4 @@
-@extends('template.base')
+<!--@extends('template.base')
 {{ $menuOn = false }}
 @section('content')
 <div class="container">
@@ -102,4 +102,4 @@
     </div>
 </div>
 
-@endsection
+@endsection-->

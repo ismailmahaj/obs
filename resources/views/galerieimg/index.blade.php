@@ -36,6 +36,7 @@
 <tr>
     <td>{{ ++$i }}</td>
     <td>{{ $video->galerie_img }}</td>
+    <td>{{ $video->lien_video }}</td>
     
     
     <td>

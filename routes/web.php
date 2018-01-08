@@ -83,7 +83,7 @@ Route::group(['middleware' => 'auth'], function () {
        "uses" => 'UploadController@show',
        "as" => 'galerieimg.show',
    ]);
-   
+
    Route::get('/galerieimg/{id}/edit', [
        "uses" => 'UploadController@edit',
        "as" => 'galerieimg.edit',
@@ -93,7 +93,7 @@ Route::group(['middleware' => 'auth'], function () {
        'uses' => 'UploadController@update',
        'as' => 'galerieimg.update',
    ]);
-   Route::get('/galerieimg/{id}/remove', [
+   Route::get('/galerieimg/remove/', [
        "uses" => 'UploadController@destroy',
        "as" => 'galerieimg.destroy',
    ]);
@@ -133,8 +133,8 @@ Route::group(['middleware' => 'auth'], function () {
 //     Route::get('/admin/membre/remove/{membre}', 'AdminController@destroy');
 //     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 });
-Route::group(['middleware' => 'auth'], function () {
     Auth::routes();
+Route::group(['middleware' => 'auth'], function () {
     Route::post('/storeMember', 'StaticViewsController@storeMember');
 
     Route::get('/biographie', ['as' => 'biographie', function () {

@@ -41,7 +41,7 @@
 
             
         </div>
-        <div class="row espace">
+        <!--<div class="row espace">
             <div class="col-md-2 col-md-offset-5 col-xs-12 more">
                 <a href="{{url('articles')}}" id="voir-plus">
                     <button type="button" class="btn btn-default bouton-articles">Voir plus
@@ -49,7 +49,7 @@
                 </a>
             </div>
         
-        </div>
+        </div>-->
     </div>
 
 

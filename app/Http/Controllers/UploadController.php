@@ -17,8 +17,14 @@ class UploadController extends Controller
             $medias = Media::latest()->paginate(10);
             return view('galerieimg.index', compact('medias'))
                 ->with('i', ($request->input('page', 1) - 1) * 10);
-    }}
+    }
+    }
 
+
+public function create()
+    {
+        return view('galerieimg.create');
+    }
     public function store(Request $request)
     {
 
@@ -73,8 +79,9 @@ class UploadController extends Controller
     }
     public function destroy($id)
     {
+dd($id);
         Media::find($id)->delete();
-        return redirect()->route('galerieimg.index')
-            ->with('success', 'Media deleted successfully');
+        // return redirect()->route('galerieimg.index')
+            // ->with('success', 'Media deleted successfully');
     }
 }
