@@ -19,6 +19,13 @@
   padding-left: 10px;
 }
 
+@media (min-width: 767px){
+  .lang{
+    padding-top: 15px;
+    float: right;
+  }
+}
+
 #presse{
   width: 100%;
 }

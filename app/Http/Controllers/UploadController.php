@@ -49,7 +49,7 @@ public function create()
             // $name = $projet->galerie_img . '.' .$extension;
             $projet->galerie_img = $name;
             // On utilise l'image enregistrer avec sa taile et sa destination de sauvegarde
-            $img = Image::make($request->file('galerie_img'))->resize(400, 300);
+            $img = Image::make($request->file('galerie_img'))->resize(900, 900);
             //    dd($img);
             $img->save($destination . $name);
 
