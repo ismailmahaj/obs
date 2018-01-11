@@ -26,7 +26,7 @@
 
 </div>
 
-{!! Form::model($video, ['method' => 'POST','route' => ['videos.edit', $video->id]]) !!}
+{!! Form::model($video, ['method' => 'GET','route' => ['videos.edit', $video->id]]) !!}
 
     @include('videos.form')
 

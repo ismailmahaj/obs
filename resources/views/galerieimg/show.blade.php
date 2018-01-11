@@ -10,7 +10,7 @@
 
         <div class="pull-left">
 
-            <h2> Show Post</h2>
+            <h2>Voir lien image</h2>
 
         </div>
 
@@ -32,9 +32,9 @@
 
         <div class="form-group">
 
-            <strong>image:</strong>
+            <strong>Image:</strong>
 
-            {{ $videos->galerie_img}}
+            {{ $Media->galerie_img}}
             
 
         </div>

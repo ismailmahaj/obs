@@ -25,8 +25,7 @@
             @include('footer')
        </footer>
 
-<script src="{{url('admin/dist/js/jquery.js')}}"></script>
-     <script src="{{url('admin/dist/js/bootstrap.js')}}"></script>
+
    
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.js"></script>
     <script src="{{url('js/app.js')}}"></script>

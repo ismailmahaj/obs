@@ -10,7 +10,7 @@
 
         <div class="pull-left">
 
-            <h2>Edit Post</h2>
+            <h2>Modifier Image</h2>
 
         </div>
 
@@ -26,10 +26,11 @@
 
 </div>
 
-{!! Form::model($media, ['method' => 'POST','route' => ['galerieimg.edit', $media->id]]) !!}
+<!-- {{!! Form::model($Media, ['method' => 'POST', 'route' => ['galerieimg.edit', $Media->id]]) !!}} -->
 
-    @include('videos.form')
 
-{!! Form::close() !!}
+    @include('galerieimg.form')
+
+{{!! Form::close() !!}}
 
 @endsection

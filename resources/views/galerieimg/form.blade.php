@@ -11,8 +11,8 @@
 
            {{ Form::open(array('route' => 'galerieimg.store', 'files' => true, 'enctype' => 'multipart/form-data')) }}
 
-    <!--{{ Form::text('titre_video',null) }} -->
-    {!! Form::file('galerie_img', null, array('class' => 'form-control', 'enctype' => 'multipart/form-data')) !!}}
+    
+    {{ Form::file('galerie_img', ['class' => 'form-control']) }}
     {{ Form::submit('Upload') }}
 {{ Form::close() }}
 </div>

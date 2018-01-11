@@ -60,7 +60,7 @@ Route::group(['middleware' => 'auth'], function () {
        "uses" => 'VideosController@edit',
        "as" => 'videos.edit',
    ]);
-   Route::get('/videos/{id}/remove', [
+   Route::delete('/videos/{id}/remove', [
        "uses" => 'VideosController@destroy',
        "as" => 'videos.destroy',
    ]);
@@ -89,11 +89,11 @@ Route::group(['middleware' => 'auth'], function () {
        "as" => 'galerieimg.edit',
    ]);
 
-   Route::post('/galerieimg/{id}', [
+   Route::put('/galerieimg/{id}', [
        'uses' => 'UploadController@update',
        'as' => 'galerieimg.update',
    ]);
-   Route::get('/galerieimg/remove/', [
+   Route::delete('/galerieimg/remove/{id}', [
        "uses" => 'UploadController@destroy',
        "as" => 'galerieimg.destroy',
    ]);

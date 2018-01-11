@@ -26,10 +26,10 @@
 
 </div>
 
-{!! Form::model($post, ['method' => 'PATCH','route' => ['posts.update', $post->id]]) !!}
+{{!! Form::model($post, ['method' => 'PATCH','route' => ['posts.update', $post->id]]) !!}}
 
     @include('posts.form')
 
-{!! Form::close() !!}
+{{!! Form::close() !!}}
 
 @endsection

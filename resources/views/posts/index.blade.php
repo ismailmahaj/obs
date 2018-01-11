@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
-<div class="panel-heading">Dashboard</div>
+<div class="panel-heading">Tableau de Bord</div>
 
       <div class="panel-body">
         @if (session('status'))
@@ -11,8 +11,8 @@
         </div>
 <div class="row">
     <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Post CRUD</h2>
+        <div class="text-center">
+            <h2>ARTICLES - EVENEMENTS</h2>
         </div>
     </div>
 </div>
@@ -21,22 +21,22 @@
         <p>{{ $message }}</p>
     </div>
 @endif
-<table class="table table-bordered">
+<table class="table table-bordered text-center">
     <tr>
-        <th width="80px">No</th>
-        <th>Titre</th>
-        <th>date</th>
-        <th>lieu</th>
-        <th>adresse</th>
-        <th>description</th>
-        <th>lien_billetterie</th>
-        <th>lien_image</th>
+        <th class="text-center" width="80px">N° ID</th>
+        <th class="text-center">TITRE</th>
+        <th class="text-center">DATE</th>
+        <th class="text-center">LIEU</th>
+        <th class="text-center">ADRESSE</th>
+        <th class="text-center">DESCRIPTION</th>
+        <th class="text-center">LIEN BILLETERIE</th>
+        <th class="text-center">LIEN IMAGE</th>
         <th width="140px" class="text-center">
-            <a class="btn btn-success btn-sm" href="{{ route('posts.create') }}"><i class="glyphicon glyphicon-plus"></i></a>
+            <a class="btn btn-success btn-sm" href="{{ url('home') }}"><i class="glyphicon glyphicon-plus"></i></a>
         </th>
     </tr>
 @foreach ($posts as $post)
-<tr>
+<tr class="text-center">
     <td>{{ ++$i }}</td>
     <td>{{ $post->titre }}</td>
     <td>{{ $post->date }}</td>

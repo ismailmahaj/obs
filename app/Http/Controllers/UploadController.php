@@ -79,9 +79,9 @@ public function create()
     }
     public function destroy($id)
     {
-dd($id);
+      
         Media::find($id)->delete();
-        // return redirect()->route('galerieimg.index')
-            // ->with('success', 'Media deleted successfully');
+        return redirect()->route('galerieimg.index')
+            ->with('success', 'Media deleted successfully');
     }
 }

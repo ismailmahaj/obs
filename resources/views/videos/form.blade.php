@@ -11,8 +11,8 @@
 
            {{ Form::open(array('route' => 'videos.store', 'files' => true, 'enctype' => 'multipart/form-data')) }}
 
-    <!--{{ Form::text('titre_video',null) }} -->
-    {!! Form::file('img_video', null, array('class' => 'form-control') !!}
+    
+    {{ Form::file('img_video', ['class' => 'form-control']) }}
     {{ Form::text('lien_video') }}
     {{ Form::submit('Upload') }}
 {{ Form::close() }}

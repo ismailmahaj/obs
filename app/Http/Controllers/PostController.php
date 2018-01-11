@@ -35,7 +35,7 @@ class PostController extends Controller
         $projet->lien_billetterie = strip_tags($request->input('lien_billetterie'));
         $projet->lieu = strip_tags($request->input('lieu'));
         $projet->lien_image = strip_tags($request->file('lien_image')->getClientOriginalName());
-        // dd($request->file('lien_image')->getClientOriginalName());
+       
         $projet->save();
 
         if ($request->file('lien_image')) {
