@@ -84,4 +84,11 @@ public function create()
         return redirect()->route('galerieimg.index')
             ->with('success', 'Media deleted successfully');
     }
+
+    public function galerie(){
+        
+        $photos = Media::latest()->paginate(10);
+        return view('pages/photos', compact('photos'));
+            // ->with('i', (input('img_video', 1) - 1) * 10);
+    }
 }

@@ -12,7 +12,7 @@ class ContactController extends Controller
         //validation
         $this->validate($request, [
                 'nom' => 'required',
-                'email' => 'required|email',
+                // 'email' => 'required|email',
                 'message' => 'required'
             ]);
         $nom =$request->nom;
@@ -28,7 +28,7 @@ class ContactController extends Controller
         Mail::send('emails.send', ['content' => $msg, 'nom' => $nom, 'email' => $email], function ($message)
         {
             $message->from('oussama@brusselart.be', 'Oussama Benali');
-            $message->to('oussama@brusselart.be')->subject('Nouveau mail venant de oussamabenali.be');
+            $message->to('oussama@brusselart.be');
         });
         //return response()->json(['message' => 'Request completed']);
         

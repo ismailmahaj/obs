@@ -27,10 +27,10 @@
         <div class="row espace">
             <div class="col-md-2 col-md-offset-5 more">
                 
-                <!--<a href="{{ route('videos.index') }}" id="voir-plus-images">
+                <a href="{{ route('galerie_videos') }}" id="voir-plus-images">
                     <button type="button" class="btn btn-default bouton-images">Voir plus
                     </button>
-                </a>-->
+                </a>
             </div>
         </div>
     </div>

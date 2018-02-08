@@ -1,4 +1,28 @@
 <div class="bg">
+<div class="row">
+
+<h1 class="text-center titre-white">Ils nous ont fait confiance</h1>
+<div class="col-md-12 text-center">
+<a target="_blank" href="https://www.facebook.com/andaloussia97/">
+    <img class="partenariat" src="{{ url('img/partenaire/andaloussia.png') }}" alt="andaloussia partenaire oussama benali oussamacomedy">
+</a>
+<a target="_blank" href="https://molengeek.com/">
+    <img class="partenariat" src="{{ url('img/partenaire/molengeek.png') }}" alt="molengeek partenaire oussama benali oussamacomedy">
+</a>
+<a target="_blank" href="https://www.espacemagh.be/">
+    <img class="partenariat" src="{{ url('img/partenaire/espace_magh.png') }}" alt="espace magh EM partenaire oussama benali oussamacomedy">
+</a>
+<a target="_blank" href="https://www.facebook.com/sallesaphir/">
+    <img class="partenariat" src="{{ url('img/partenaire/safari.png') }}" alt="salle saphir partenaire oussama benali oussamacomedy">
+</a>
+<a target="_blank" href="https://www.facebook.com/PhysikcalByVitality">
+    <img class="partenariat" src="{{ url('img/partenaire/physikcal.png') }}" alt="physikcal nutrition partenaire oussama benali oussamacomedy">
+</a>
+</div>
+
+</div>
+
+
     <div class="row contact" id="contact">
         <div class="col-md-6 col-md-offset-3">
             <h1 class="text-center titre-white">{{ trans('sections.contact')}}</h1>
@@ -77,12 +101,47 @@
             </div>
         </div>
     </div>
+    <div class="row follow text-center">
+                                <h1 class="titre-white">Réseaux Sociaux</h1>
+
+                                <a target="_blank" href="https://www.facebook.com/oussama.escobar.3"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                                
+
+                                <a target="_blank" href="https://www.instagram.com/oussamabenali/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                               
+
+                               <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-snapchat" aria-hidden="true"></i>
+</a>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content modal-snap">
+      
+      <div class="modal-body">
+        <img id="snapcode" src="{{ url('img/snapcode.jpg') }}" alt="snapchat oussama benali oussamacomedy">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+                               
+                                
+    
+    </div>
+
+                            
+                            
+
 </div>
     
         <div class="sub_footer">
         <div class="container">
 <div class="col-md-12 text-center">
-                <span>Oussama Benali © 2017 - Tous droits réservés. Made MolenGeek by Amaya | MolenIT</span>
+                <span>Oussama Benali © 2017 - Tous droits réservés. Made MolenGeek by Amaaya | MolenIT</span>
             </div>
         </div>
     </div>

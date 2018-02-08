@@ -11,12 +11,13 @@
 |
  */
 
-Route::get('send', 'MailController@send');
-
+// Route::get('send', 'MailController@send');
+Route::get('emails/send', 'ContactController@send');
 Route::get('/', [
     "uses" => "UsersController@index",
     "as" => "pages.index",
 ]);
+
 
 Route::get('/photos', [
     "uses" => "UploadController@store",
@@ -32,6 +33,18 @@ Route::post('/contact', [
     'uses' => 'ContactController@store',
     'as' => 'contact',
 ]);
+
+Route::get('/photos', [
+    'uses' => 'UploadController@galerie',
+    'as' => 'photos', function () {
+    return view('pages.photos');
+}]);
+
+Route::get('/galerie_videos', [
+    'uses' => 'VideosController@galerie',
+    'as' => 'galerie_videos', function () {
+    return view('pages.galerie_videos');
+}]);
 
 
 

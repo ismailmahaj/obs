@@ -16,9 +16,13 @@ class Contact extends Mailable
      *
      * @return void
      */
+    public $contact;
+ 
+
+
     public function __construct()
     {
-        //
+        $this->contact = $contact;
     }
 
     /**
@@ -28,7 +32,7 @@ class Contact extends Mailable
      */
     public function build()
     {
-            return $this->from('monsite@chezmoi.com')
-            return $this->view('footer');        
+            return $this->from('Oussama@bruxellart.be')
+            ->view('footer');        
     }
 }

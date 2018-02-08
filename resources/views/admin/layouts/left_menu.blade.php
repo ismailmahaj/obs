@@ -2,7 +2,7 @@
 	<div class="sidebar-wrapper">
         <div class="logo">
             <a href="/admin" class="simple-text">
-                Destiny Trophy
+                <!-- Destiny Trophy -->
             </a>
         </div>
         <ul class="nav">

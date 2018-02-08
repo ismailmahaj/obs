@@ -10,6 +10,9 @@ body {
 * {
   outline: none; }
 
+
+
+
 .row > [class*="col-"] {
   margin-bottom: 25px; }
 

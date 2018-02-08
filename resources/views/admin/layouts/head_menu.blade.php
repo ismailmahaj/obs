@@ -18,7 +18,7 @@
                 <li>
                     <a href="{{ route('logout') }}" 
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <p>Log out</p>
+                        <p>Déconnexion</p>
                     </a>
                 </li>
 				<li class="separator hidden-lg hidden-md"></li>

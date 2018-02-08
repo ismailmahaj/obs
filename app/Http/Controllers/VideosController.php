@@ -82,4 +82,13 @@ class VideosController extends Controller
         return redirect()->route('videos.index')
             ->with('success', 'video deleted successfully');
     }
+
+
+
+    public function galerie(){
+        
+        $videos = Video::latest()->paginate(10);
+        return view('pages/galerie_videos', compact('videos'));
+            // ->with('i', (input('img_video', 1) - 1) * 10);
+    }
 }
