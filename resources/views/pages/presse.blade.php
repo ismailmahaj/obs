@@ -2,7 +2,7 @@
     <div class="container" id="presse">
 
         <div class="row espace">
-            <h1>Presse</h1>
+            <h1>{{trans('presse.presse')}}</h1>
         </div>
         <div class="row">
             <div class="col-md-3 col-xs-6 xsmodif">
